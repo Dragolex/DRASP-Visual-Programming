@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<!-- Represents the main window -->
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+		  fx:id="mainPane" vgap="5">
+		  
+	<padding>
+		<Insets top="12" right="12" bottom="12" left="12"/>
+	</padding>
+	
+	<GridPane xmlns:fx="http://javafx.com/fxml/1" styleClass="basicRounded, section, sectionBorderFull"
+		alignment="top_left" fx:id="innerPane" hgap="30" vgap="8" GridPane.rowIndex="0" >
+	
+	
+		<HBox GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
+				<Text text="GUI Settings" />
+			<Separator prefWidth="10000" />
+		</HBox>
+		
+		
+		<Text text="Alternative Layout" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+		<ToggleSwitch fx:id="layoutToggle" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="RIGHT" prefWidth="10000" />
+		<ImageView fx:id="QlayoutToggle" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+
+		<Text text="Smooth GUI Effects" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+		<ToggleSwitch fx:id="smoothTransToggle" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="RIGHT" prefWidth="10000" />
+		<ImageView fx:id="QsmoothTransToggle" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+
+
+		<HBox GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="CENTER">
+			<Separator opacity="0"/>
+		</HBox>
+		
+		<HBox GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="4" alignment="CENTER">
+				<Text text="External Deployment Target" />
+			<Separator prefWidth="10000" />
+		</HBox>
+		
+		
+		
+		<Text text="Network Target" GridPane.columnIndex="0" GridPane.rowIndex="5"/> <!-- //Network Target (Linux/Raspberry) -->
+		<ToggleSwitch fx:id="linuxTargetToggle" mnemonicParsing="false" selected="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.halignment="RIGHT" />
+		<ImageView fx:id="QlinuxTargetToggle" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+
+		<!-- <Text text="SSH Host:" GridPane.columnIndex="0" GridPane.rowIndex="6"/> -->
+		<HBox GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.halignment="RIGHT" alignment="CENTER_LEFT">
+			<Text text="SSH Host: "/>
+			<Button fx:id="btAutoHost" prefWidth="80" onAction="#setAutoHost" text="Auto" styleClass="mainButtons, standardBoldText"  maxWidth="80" maxHeight="34" wrapText="true" >
+				<tooltip><Tooltip text="Automatically try to find the connected device.\nIt has to be connected to the network!"/></tooltip>
+			</Button>
+		</HBox>		
+		<TextField fx:id="hostnameField" text="HOST" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.halignment="RIGHT" />		
+		<ImageView fx:id="QhostnameField" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+		
+		<Text text="SSH Username:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+		<TextField fx:id="usernameField" text="pi" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.halignment="RIGHT" />
+		<ImageView fx:id="QusernameField" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+
+		<Text text="SSH Password:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+		<TextField fx:id="passwordField" text="raspberry" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.halignment="RIGHT" />
+		<ImageView fx:id="QpasswordField" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+		
+		
+		<HBox GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="9" alignment="CENTER">
+			<Separator opacity="0"/>
+		</HBox>
+		
+		<HBox GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="10" alignment="CENTER">
+				<Text text="Environment Directories" />
+			<Separator prefWidth="10000" />
+		</HBox>
+		
+		<Text text="Target Path:" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+		<TextField fx:id="targetDirField" text="" GridPane.columnIndex="1" GridPane.rowIndex="11" GridPane.halignment="RIGHT" />
+		<ImageView fx:id="QtargetDirField" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="11"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+		
+		<Text text="Local Resources:" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+		<TextField fx:id="resDirField" text="" GridPane.columnIndex="1" GridPane.rowIndex="12" GridPane.halignment="RIGHT" />
+		<ImageView fx:id="QresDirField" fitHeight="20.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="12"> <Image url="/guiGraphics/if_question.png" /> </ImageView>
+	<!-- RIGTHCLICK TO SELECT               -->
+	
+	
+	</GridPane>
+	
+	<GridPane GridPane.rowIndex="1" hgap="8" prefWidth="10000">
+				<!-- Note, do not change 'Test and Save' without changing inside controler due to tutorial! -->
+		<Button fx:id="btApply" prefWidth="10000" onAction="#apply" text="Test and Save" HBox.hgrow="always" styleClass="mainButtons, standardBoldText"  maxWidth="Infinity" maxHeight="Infinity" wrapText="true" GridPane.columnIndex="0" />
+		<Button fx:id="btCancel" prefWidth="10000" onAction="#cancel" text="Cancel" HBox.hgrow="always" styleClass="mainButtons, standardBoldText"  maxWidth="Infinity" maxHeight="Infinity" wrapText="true" GridPane.columnIndex="1" />
+	</GridPane>
+
+	<stylesheets>
+	    <URL value="@../CSS/ThemeColors.css" />
+	    <URL value="@../CSS/StaticStyles.css" />
+	    <URL value="@../CSS/CustomStyles.css" />
+	    <URL value="@SettingsStyles.css" />
+	</stylesheets>
+
+</GridPane>

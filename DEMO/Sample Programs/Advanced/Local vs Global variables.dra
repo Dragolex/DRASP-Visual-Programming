@@ -1,0 +1,49 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This demonstrates how variables created in the Initialization event are global
+	StComEv
+	|TextOnly: and all other ones are local.
+	StComEv
+	|TextOnly: Alternate between pressing <A> and <B> a few times during 2 seconds
+	StComEv
+	|TextOnly:  to see how the global variable retains the value of the last pressed button
+	EvInit
+		StSetNumVar
+		|&Vari: #globalVal
+		|CalcValueTerm: 10.0
+	EvKeyPressed
+	|Text: A
+		StLabelExecute
+		|Label: print
+		|Bool: False
+		|~Text: A
+		|~Text: A
+	EvKeyPressed
+	|Text: B
+		StLabelExecute
+		|Label: print
+		|Bool: False
+		|~Text: B
+		|~Text: B
+	EvLabeled
+	|Label: print
+	|&Vari: #val
+	|&Vari: #globalVal
+		ElDelay
+		|Number: 2500.0
+		ElWriteVariable
+		|Text: Local var: 
+		|~Vari: #val
+		ElWriteVariable
+		|Text: Global var: 
+		|~Vari: #globalVal
+		ElWriteMessage
+		|Text: -
+
+COLLAPSED NODES BITMAP
+AQI=

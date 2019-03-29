@@ -1,0 +1,51 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This program demonstrates how alarms work.
+		StComEv
+		|TextOnly: An LED attached to GPIO 17 can be switched on an off with a switch on GPIO 4.
+		StComEv
+		|TextOnly: However switch-off will always be delayed be two seconds.
+		StComEv
+		|TextOnly: With a motion detector module on GPIO 4 this works like an automated garden lamp.
+	StComEv
+	|TextOnly: To test this program on a PC, click SIMULATE
+	StComEv
+	|TextOnly: then use the drawn switch in the Variables/Info window! See how the lamp glows.
+	EvInit
+		ElSetIO
+		|Number: 17.0
+		|Bool: False
+	EvGPIOchanged
+	|Number: 4.0
+	|Bool: False
+	|Bool: False
+		StLabelAlarm
+		|Label: #lightsOff
+		|Number: 2000.0
+		|Bool: True
+	EvGPIOchanged
+	|Number: 4.0
+	|Bool: True
+	|Bool: False
+		StComEv
+		|TextOnly: Overwriting the alarm with a negative delay aborts the alarm!
+		StLabelAlarm
+		|Label: #lightsOff
+		|Number: -1.0
+		|Bool: True
+		ElSetIO
+		|Number: 17.0
+		|Bool: True
+	EvLabeled
+	|Label: #lightsOff
+		ElSetIO
+		|Number: 17.0
+		|Bool: False
+
+COLLAPSED NODES BITMAP
+AQ==

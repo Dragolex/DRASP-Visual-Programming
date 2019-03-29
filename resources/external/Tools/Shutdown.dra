@@ -1,0 +1,22 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+458
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: Shuts the target system down
+	EvInit
+		ConAskUser
+		|Text: Are you sure you want to shut the target down?|That will interrupt the connection and require manual restart.
+			ElExecCommand
+			|Bool: False
+			|&Vari: #o
+			|Text: sudo shutdown -h now
+			|Bool: True
+			ElDelay
+			|Number: 15000.0
+			|Text: Please wait... |§ seconds.
+
+COLLAPSED NODES BITMAP
+A8ODxpIG

@@ -1,0 +1,22 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+458
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: Reboots the target system
+	EvInit
+		ConAskUser
+		|Text: Are you sure you want to restart the target system?|Manual reconection might be needed!
+			ElExecCommand
+			|Bool: False
+			|&Vari: #o
+			|Text: sudo reboot
+			|Bool: True
+			ElDelay
+			|Number: 40000.0
+			|Text: Please wait... |§ seconds.
+
+COLLAPSED NODES BITMAP
+A8ODxpIG

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project DynEffectsControl">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="C:/Users/drarr/Dropbox/Projekte/JavaWorkspaces/Java_Workspace"/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/ExportedJar.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="main.MainControler"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.workspace}/DynEffectsControl/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/controlsfx-8.40.12.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/reactfx-2.0-M5.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/jsch-0.1.54.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/drarr/Dropbox/Projekte/JavaWorkspaces/Drasp/Deploy Test/scenicView.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/javafx-mx.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/jfxrt.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/jfxswt.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/commons-net-3.6.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/telegrambots-4.1-jar-with-dependencies.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.workspace}/DynEffectsControl/libs/scenicView.jar"/>
+        </jar>
+    </target>
+</project>

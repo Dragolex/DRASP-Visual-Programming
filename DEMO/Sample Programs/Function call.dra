@@ -1,0 +1,32 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This demonstrates how labeled events work like function calls in other languages.
+	StComEv
+	|TextOnly: You can use this system to call parametrized program-elements in multiple places.
+	EvInit
+		ElDelay
+		|Number: 500.0
+		StLabelExecute
+		|Label: foo
+		|Bool: True
+		|~Text: Hallo
+		|~Text: 42.0
+		StRepEv
+	EvLabeled
+	|Label: foo
+	|&Vari: #myStr
+	|&Vari: #myNum
+		ElWriteVariable
+		|Text: The variable: 
+		|~Vari: #myStr
+		ElWriteVariable
+		|Text: The variable: 
+		|~Vari: #myNum
+
+COLLAPSED NODES BITMAP
+AQ==

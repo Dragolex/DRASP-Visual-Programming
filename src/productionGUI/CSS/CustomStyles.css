@@ -1,0 +1,552 @@
+/* Enables the background for all sections */
+
+.section {
+	/* Alternative background generator: http://www.grsites.com/generate/generator/5001/ */
+	-fx-background-color: baseColorBfull;
+	-fx-background-image: url("/guiGraphics/Scale2.png");
+	-fx-background-repeat: repeat;
+	
+	-fx-padding: 0 60 120 5;
+}
+
+.messageBackground {
+	/* Alternative background generator: http://www.grsites.com/generate/generator/5001/ */
+	-fx-background-color: baseColorBfull;
+	-fx-background-image: url("/guiGraphics/Scale2.png");
+	-fx-background-repeat: repeat;
+}
+
+.messageBackgroundRed {
+	/* Alternative background generator: http://www.grsites.com/generate/generator/5001/ */
+	-fx-background-color: alertMessageBackgroundColor;
+	-fx-background-image: url("/guiGraphics/Scale2.png");
+	-fx-background-repeat: repeat;
+}
+
+
+
+
+
+
+
+.sectionBorder {
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 0.5 1.25 1.25 1.25;
+}
+
+.sectionBorderFull {
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 1.25;
+}
+
+.contentFlowPane {
+	-fx-padding: 5 0 0 0;
+}
+
+
+/*
+.selectable:hover {
+    -fx-background-color: hoverColorA;
+}
+*/
+
+
+.actionColors {
+	-fx-background-color: linear-gradient(actionsColorTop, actionsColorBottom);
+}
+.actionColorsDarkened, .actionColors:hover {
+	-fx-background-color: actionsColorDarkened;
+}
+
+
+.conditionColors {
+	-fx-background-color: linear-gradient(conditionsColorTop, conditionsColorBottom);
+}
+.conditionColorsDarkened, .conditionColors:hover {
+	-fx-background-color: conditionsColorDarkened;
+}
+
+
+.eventColors {
+	-fx-background-color: linear-gradient(eventsColorTop, eventsColorBottom);
+}
+.eventColorsDarkened, .eventColors:hover {
+	-fx-background-color: eventsColorDarkened;
+}
+
+.variableColors {
+	-fx-background-color: linear-gradient(structuresColorTop, structuresColorBottom);
+}
+.variableColorsDarkened, .variableColors:hover {
+	-fx-background-color: structuresColorDarkened;
+}
+
+.commentColors, .ignoreCommentHovering {
+	-fx-background-color: linear-gradient(rgba(200, 255, 200, 0.5), rgba(150, 200, 150, 0.5));	
+}
+.commentColors:hover {
+	-fx-background-color: rgba(150, 200, 150, 0.5);	
+}
+
+
+
+
+.selectedElementContainer:hover {
+	-fx-background-color: selectedHoverElementBackgroundColor;
+}
+
+
+
+.elementButtonContainer {
+	-fx-padding: 5;
+
+	-fx-background-color: elementBackgroundColor;
+	-fx-background-radius: 5 5 5 5;
+
+	-fx-border-color: elementBorderColor;
+	-fx-border-radius: 5 5 5 5;
+	-fx-border-width: 0.75;
+
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+}
+
+.selectedElementContainer
+{
+	-fx-background-color: selectedElementBackgroundColor;
+}
+
+
+.outerSplitters
+{
+	-fx-padding: 0;
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent; /* elementBackgroundColor */
+
+	-fx-background-color: transparent;
+}
+
+.outerSplitters>.split-pane-divider {
+    -fx-padding: 0 5.5 0 5.5;
+    -fx-background-color: transparent;
+
+	/*
+    -fx-border-color: elementBorderColor;
+	-fx-border-radius: 0;
+	-fx-border-width: 2 0 2 0;
+	*/
+
+   	/*-fx-effect: dropshadow( three-pass-box , shadowColorB , 4, 0, 0 , 0 );*/
+}
+
+
+.outerSplitters .outerSplitters>.split-pane-divider {
+	-fx-padding: 0 5 0 5;
+	-fx-border-width: 0 2 0 2;
+}
+
+.hiddenTextField {
+	-fx-padding: 0 5 0 0;
+}
+
+.machineColorEdgeLeft
+{
+	-fx-border-radius: 0 0 0 5;
+	-fx-background-radius: 0 0 0 5;
+
+	-fx-border-width: 0 0.5 0 0;
+	-fx-border-color: elementBorderColor;
+
+
+	-fx-background-color: shadowColorB;
+
+	-fx-min-width: 10;
+	-fx-max-width: 10;
+}
+
+
+.machineColorEdgeRight
+{
+	-fx-border-radius: 0 5 5 0;
+	-fx-background-radius: 0 5 5 0;
+
+	-fx-border-width: 0 0 0 0.5;
+	-fx-border-color: elementBorderColor;
+
+	-fx-background-color: shadowColorB;
+
+	-fx-min-width: 10;
+	-fx-max-width: 10;
+}
+
+.machineIndexText
+{
+	-fx-text-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 4, 0, 0, 1 );
+}
+
+.machineIndexTextLarge
+{
+    -fx-font-size: 13;
+}
+
+.machineIndexTextRightRotated
+{
+	-fx-rotate: 90;
+
+    -fx-font-size: 11;
+}
+
+
+
+
+.rotLeft
+{
+	-fx-padding: 0;
+	-fx-rotate: -90;
+}
+
+.splitSegment
+{
+	-fx-padding: 3 6 3 6;
+	-fx-alignment: "CENTER_LEFT";
+}
+
+
+.revertButton
+{
+	-fx-background-image: url("../../../resources/guiGraphics/revertIcon.png");
+	-fx-background-size: 24 24;
+	-fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+	-fx-background-color: transparent;
+	-fx-padding: 5;
+
+	-fx-opacity: 0.7;
+}
+.revertButton:hover
+{
+	-fx-opacity: 0.9;
+}
+.revertButton:pressed
+{
+	-fx-opacity: 1;
+}
+.revertButton:disabled
+{
+	-fx-opacity: 0.3;
+}
+
+.removeButton
+{
+	-fx-background-image: url("../../../resources/guiGraphics/closeBoxRed.png");
+	-fx-background-size: 24 24;
+	-fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+	-fx-background-color: transparent;
+	-fx-padding: 5;
+
+	-fx-opacity: 0.7;
+}
+.removeButton:hover
+{
+	-fx-opacity: 0.9;
+}
+.removeButton:pressed
+{
+	-fx-opacity: 1;
+}
+
+
+
+.sectionTitleContainer
+{
+	-fx-background-color: linear-gradient(rgba(68, 119, 200, 0.5), rgba(128, 179, 255, 0.5));
+
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 1.25 1.25 0 1.25;
+	
+	-fx-padding: 5;
+
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+}
+
+.sectionTitleContainerAlt
+{
+	-fx-background-color: linear-gradient(rgba(68, 119, 200, 0.5), rgba(128, 179, 255, 0.5));
+
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 1 0 1 0;
+	
+	-fx-padding: 5;
+
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+}
+	
+
+.mainButtonsSurroundV
+{
+		-fx-padding: 7 0 0 0;	
+}
+
+.mainButtonsSurroundH
+{
+		-fx-padding: 0 0 0 7;	
+}
+
+
+.mainButtons
+{
+	-fx-background-color: linear-gradient(rgba(68, 119, 200, 0.55), rgba(128, 179, 255, 0.55));
+	
+	/*-fx-min-width: 140; -fx-background-color: linear-gradient(actionsColorTop, actionsColorBottom);
+	*/
+	
+	-fx-alignment: CENTER;
+	
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 1.25;
+	
+	
+	-fx-background-radius: 0 5 5 5;
+	-fx-border-radius: 0 5 5 5;	
+	
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+}
+
+
+.overlayMenuBackground, .alertDialog > *.button-bar > *.container, .alertDialog:header *.header-panel 
+{
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 1.25;
+	
+	
+	-fx-background-radius: 0 5 5 5;
+	-fx-border-radius: 0 5 5 5;	
+	
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+	
+	/*-fx-background-color: linear-gradient(rgba(68, 119, 200, 0.65), rgba(128, 179, 255, 0.65));*/
+	-fx-background-color: linear-gradient(rgba(135, 135, 135, 0.65), rgba(160, 160, 160, 0.65));
+}
+
+.mainButtonsHighlighted
+{
+	-fx-background-color: linear-gradient(rgba(155, 255, 255, 0.65), rgba(100, 155, 155, 0.65));
+}
+
+
+
+.mainButtons:hover
+{
+	-fx-background-color: rgba(155, 155, 155, 0.6);
+}
+
+.mainButtons:pressed
+{
+	-fx-background-color: rgba(205, 205, 205, 0.6);
+}
+
+
+.mainButtonsHighlighted:hover
+{
+	-fx-background-color: rgba(100, 155, 155, 0.6);
+}
+
+.mainButtonsHighlighted:pressed
+{
+	-fx-background-color: rgba(155, 205, 205, 0.6);
+}
+
+
+
+#fulLDebugCheckbox
+{
+	-fx-text-fill: white;
+	
+	-fx-padding: 0;
+	-fx-font-family: "Arial";
+    -fx-font-size: 11;
+    -fx-font-weight: bold;
+}
+
+
+
+.elementContentTextField
+{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 5, 0, 0, 1 );
+}
+
+#buttonsRegionGrid
+{
+	-fx-padding: 0 0 7 0;
+}
+
+
+
+.programPageButton
+{
+	-fx-font-size: 15;
+	-fx-padding: 0 5 0 5;
+	
+	-fx-text-fill: white;
+	-fx-fill: white;
+	
+	-fx-font-weight: bold;
+
+
+	
+	-fx-background-color: linear-gradient(rgba(255, 255, 255, 0.65), rgba(155, 155, 155, 0.65));
+	
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 0.5;
+	
+	
+	-fx-background-radius: 0 5 5 5;
+	-fx-border-radius: 0 5 5 5;	
+	
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+	
+}
+
+.programPageButton:hover
+{
+	-fx-background-color: rgba(155, 155, 155, 0.65);
+}
+
+.programPageButton:pressed
+{
+	-fx-background-color: rgba(205, 205, 205, 0.65);
+}
+
+
+
+
+.msgHeaderBackground, .msgElementBackground, .msgHeaderBackgroundB, .msgElementBackgroundB
+{
+	-fx-padding: 2;
+
+	-fx-background-color: baseColorWeakA;
+	-fx-background-radius: 0 5 5 5;
+	
+	-fx-border-color: elementBorderColor;
+	-fx-border-radius: 0 5 5 5;
+	-fx-border-width: 0.75 0.75 0.75 0.75;
+
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+}
+
+.msgElementBackground, .msgElementBackgroundB
+{
+	-fx-background-color: baseColorWeakB;
+	
+	-fx-border-width: 0 0.75 0.75 0.75;
+}
+
+.msgElementBackgroundClickable
+{
+	-fx-background-color: linear-gradient(rgba(255, 255, 255, 0.25), rgba(155, 155, 155, 0.25));
+}
+
+.msgElementBackgroundClickable:hover
+{
+	-fx-background-color: baseColorAdarkFull;
+}
+.msgElementBackgroundClickable:pressed
+{
+	-fx-background-color: shadowedColorA;
+}
+
+.msgTableBox
+{
+	-fx-background-color: baseColorWeakA;
+	
+}
+
+
+
+.msgElementBackground>.split-pane-divider, .msgHeaderBackground>.split-pane-divider, .msgHeaderBackgroundB>.split-pane-divider
+{
+	 -fx-padding: 0 0 0 1.1;
+	 
+	 -fx-background-color: elementBorderColor;
+}
+.msgHeaderBackgroundB>.split-pane-divider, .msgElementBackgroundB>.split-pane-divider
+{
+	 -fx-padding: 0;
+}
+
+.tableElementsLabelHeader, .tableElementsLabel
+{
+	-fx-padding: 0 0 0 0;
+	-fx-padding: 2 2 2 4;
+	
+    -fx-text-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );	
+}
+
+.tableElementsLabel
+{
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+
+
+
+.actionColorsDarkened:hover
+{
+	-fx-background-color: actionsColorDarkenedHover;
+}
+.actionColorsMarked, .actionColorsMarked:hover
+{
+	-fx-background-color: linear-gradient(to right, actionsColorDarkenedHover 0%, markedColor 50%, markedColor 100%);
+}
+
+
+.conditionColorsDarkened:hover
+{
+	-fx-background-color: conditionsColorDarkenedHover;
+}
+.conditionColorsMarked, .conditionColorsMarked:hover
+{
+	-fx-background-color: linear-gradient(to right, conditionsColorDarkenedHover 20%, markedColor 50%, markedColor 100%);
+}
+
+
+.eventColorsDarkened:hover
+{
+	-fx-background-color: eventsColorDarkenedHover;
+}
+.eventColorsMarked, .eventColorsMarked:hover
+{
+	-fx-background-color: linear-gradient(to right, eventsColorDarkenedHover 20%, markedColor 50%, markedColor 100%);
+}
+
+
+.variableColorsDarkened:hover
+{
+	-fx-background-color: structuresColorDarkenedHover;
+}
+.variableColorsMarked, .variableColorsMarked:hover
+{
+	-fx-background-color: linear-gradient(to right, structuresColorDarkenedHover 20%, markedColor 50%, markedColor 100%);
+}
+
+
+.commentColorsMarked, .commentColorsMarked:hover
+{
+	-fx-background-color: linear-gradient(to right, rgba(150, 200, 150, 0.5) 20%, markedColor 50%, markedColor 100%);
+}
+
+

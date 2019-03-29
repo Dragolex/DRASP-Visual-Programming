@@ -1,0 +1,67 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		StComEv
+		|TextOnly: Show a window of 200 x 200 pixels
+		ElWindCreate
+		|&Vari: #main
+		|Number: 200.0
+		|Number: 200.0
+		StComEv
+		|TextOnly: Create a rectangle shape of 25 x 60 pixels
+		ElWindShape
+		|&Vari: #shape
+		|SelectableType: 3: Line to X/Y: Arrow to X/Y: Line to Direction: Rectangle by Width/Height: Ellipse by Box: Circle by Radius: Arc/Pie
+		|Number: 25.0
+		|Number: 60.0
+		StComEv
+		|TextOnly: Place the shape item onto the window
+		ElPlaceltem
+		|Vari: #main
+		|Vari: #shape
+		|~CalcValueTerm: 80.0
+		|~CalcValueTerm: 30.0
+		ElDelay
+		|Number: 1000.0
+		StComEv
+		|TextOnly: Fade out
+		ElWindItemFade
+		|Vari: #shape
+		|~CalcValueTerm: 0.0
+		|Number: 1000.0
+		ElDelay
+		|Number: 1000.0
+		StComEv
+		|TextOnly: Fade to 25%
+		ElWindItemFade
+		|Vari: #shape
+		|~CalcValueTerm: 0.25
+		ElDelay
+		|Number: 1000.0
+		StComEv
+		|TextOnly: Fade about 30% more -> 55%
+		ElWindItemFade
+		|Vari: #shape
+		|~CalcValueTerm: +=0.3
+		StComEv
+		|TextOnly: At the same time, rotate about 180 degrees
+		ElWindItemRotate
+		|Vari: #shape
+		|CalcValueTerm: 180.0
+		|Number: 500.0
+		ElDelay
+		|Number: 1000.0
+		StComEv
+		|TextOnly: Double the transparence -> 55% * 2 -> 100%
+		ElWindItemFade
+		|Vari: #shape
+		|~CalcValueTerm: *=2.0
+		ElDelay
+		|Number: 1000.0
+
+COLLAPSED NODES BITMAP
+AQ==

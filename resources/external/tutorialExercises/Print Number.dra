@@ -1,0 +1,18 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+456
+	
+PROGRAM ELEMENTS PAGE: Labeled Events
+Active
+	EvInit
+		ElGetInputNum
+		|Text: Please type a number.
+		|~Vari: #input
+	EvKeyPressed
+	|Text: A
+		ElWriteVariable
+		|Text: Your input was: 
+		|Vari: #input
+
+COLLAPSED NODES BITMAP
+4oKsAAAAAAAAACAC

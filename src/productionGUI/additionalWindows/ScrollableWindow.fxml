@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Represents the main window -->
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+		  fx:id="mainPane" vgap="5">
+
+
+	<padding>
+		<Insets top="12" right="12" bottom="12" left="12"/>
+	</padding>
+	
+	
+		<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="basicRounded"  fx:id="borderPane" maxHeight="Infinity" maxWidth="Infinity">
+			<top>
+				<HBox styleClass="sectionTitleContainer" fx:id="titleBox" alignment="TOP_CENTER" > <!-- GridPane.hgrow="always" GridPane.vgrow="always" -->
+					<Label styleClass="standardBoldText" fx:id="titleText"/>					
+				</HBox>
+			</top>	
+		
+			<center>
+				<ScrollPane onScroll="#onScroll"  fx:id="scrollPane" styleClass="basicRounded, sectionBorder" maxHeight="Infinity" maxWidth="Infinity" fitToHeight="true" fitToWidth="true">
+				
+					<VBox styleClass="section" fx:id="sectionBox" maxHeight="Infinity" maxWidth="Infinity">
+												
+						<VBox xmlns:fx="http://javafx.com/fxml/1"
+								  styleClass="contentFlowPane"
+								  fx:id="contentPane"
+						    	  spacing="5" maxHeight="Infinity" maxWidth="Infinity" >
+						    	  
+						    	  
+						    	  
+						    	  
+							<!-- maxWidth="1" Content prefWidth="10000" prefHeight="10000"     fitToHeight="true" fitToWidth="true" -->
+						
+									
+						</VBox>
+					</VBox>
+					
+				</ScrollPane>
+			</center>
+			
+		</BorderPane>
+
+	<stylesheets>
+	    <URL value="@../CSS/ThemeColors.css" />
+	    <URL value="@../CSS/StaticStyles.css" />
+	    <URL value="@../CSS/CustomStyles.css" />
+	</stylesheets>
+
+</GridPane>

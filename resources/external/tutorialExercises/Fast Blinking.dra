@@ -1,0 +1,21 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+457
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElSetIO
+		|Number: 15.0
+		|Bool: True
+		ElDelay
+		|Number: 100.0
+		ElSetIO
+		|Number: 15.0
+		|Bool: False
+		ElDelay
+		|Number: 100.0
+		StRepEv
+
+COLLAPSED NODES BITMAP
+AUAAAQ==

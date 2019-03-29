@@ -1,0 +1,36 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		StSetNumVar
+		|&Vari: #value
+		|CalcValueTerm: 0.0
+		StSetNumVar
+		|&Vari: #increment
+		|CalcValueTerm: 0.01
+		StLabelExecute
+		|Label: rep
+		|Bool: False
+	EvLabeled
+	|Label: rep
+		StSetNumVar
+		|&Vari: #value
+		|CalcValueTerm: +=#increment
+		StComEv
+		|TextOnly: Reduce this delay to test the speed limit.
+		StComEv
+		|TextOnly: However the GUI will lag or crash if given no delay (<1)!
+		ElDelay
+		|Number: 1.0
+		StRepEv
+	EvRhythmStep
+	|Number: 1000.0
+		ElWriteVariable
+		|Text: Val: 
+		|~Vari: #value
+
+COLLAPSED NODES BITMAP
+AQIAAQ==

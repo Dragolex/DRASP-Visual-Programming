@@ -1,0 +1,28 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: Simple demonstration of strings and automated conversion of numbers.
+	EvInit
+		StSetNumVar
+		|&Vari: #number
+		|CalcValueTerm: 5.0
+		StSetTexVar
+		|&Vari: #numText
+		|~CalcTextTerm: The value is: 
+		StSetTexVar
+		|&Vari: #numText
+		|~CalcTextTerm: +=#number
+		ElWriteMessage
+		|Text: #numText
+		StComEv
+		|TextOnly: The elements above have the same result as:
+		ElWriteVariable
+		|Text: The value is: 
+		|~Vari: #number
+
+COLLAPSED NODES BITMAP
+AQ==

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.CheckBox.*?>
+
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="buttonsRegionGrid"  maxWidth="Infinity" maxHeight="Infinity">
+
+		<!--
+		Buttons:
+		
+		Info
+		
+		Undo
+		Redo
+		
+		New File
+		Load File
+		Add File
+		Save File
+		
+		Test GPIO
+		Prepare Deploy
+		
+		- Simulate
+		- Deploy + RUN
+		-->
+		
+		<!-- <HBox styleClass="" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="0">
+			<Button fx:id="btInfo" onAction="#Info" text="" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_question.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox> -->
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="0">
+			<Button fx:id="btInfo" onAction="#Info" text="" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_question.png" />
+		        </ImageView></graphic>
+      		</Button>
+			<Button fx:id="btInfoMenu" onAction="#InfoMenu" text="!" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="22" maxHeight="Infinity" wrapText="true" />
+		</HBox>
+		
+		
+
+		<Separator  GridPane.rowIndex="1" visible="false" />
+
+		<HBox styleClass="" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="2">
+			<Button fx:id="btUndo" onAction="#Undo" text="Undo" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_undo.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="3">
+			<Button fx:id="btRedo" onAction="#Redo" text="Redo" HBox.hgrow="always" styleClass="mainButtons, standardBoldText"  maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_redo.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+
+		<Separator  GridPane.rowIndex="4" visible="false" />
+
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="5">
+			<Button fx:id="btNew" onAction="#New" text="New" HBox.hgrow="always" styleClass="mainButtons, standardBoldText"  maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_new.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="6">
+			<Button fx:id="btLoad" onAction="#Load" text="Open" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_open.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="7">
+			<Button fx:id="btAdd" onAction="#Add" text="Merge" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_add.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+	
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="8">
+			<Button fx:id="btSave" onAction="#Save" text="Save" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_save.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>		
+		
+		
+
+
+
+
+		<Separator  GridPane.rowIndex="9" visible="false" />
+
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="10">
+			<Button fx:id="btSettings" onAction="#Settings" text="Options" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_settings.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="11">
+			<Button fx:id="btTools" onAction="#Tools" text="Tools" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true">
+				<graphic><ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        	<Image url="/guiGraphics/if_tools.png" />
+		        </ImageView></graphic>
+      		</Button>
+		</HBox>
+		
+		<Separator  GridPane.rowIndex="12" visible="false" />
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="13">
+			<Button fx:id="btSimulate" onAction="#Simulate" text="SIMULATE" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true" />
+			<Button fx:id="btSimulateSettings" onAction="#SimulateSettings" text="!" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="22" maxHeight="Infinity" wrapText="true" />
+		</HBox>
+		
+		<HBox styleClass="mainButtonsSurroundV" GridPane.valignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="always" GridPane.vgrow="always" GridPane.columnIndex="0" GridPane.rowIndex="14">
+			<Button fx:id="btDeplRun" onAction="#DeplRun" text="DEPLOY" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="Infinity" maxHeight="Infinity" wrapText="true" />
+					
+			<Button fx:id="btDeplRunSettings" onAction="#DeplRunSettings" text="!" HBox.hgrow="always" styleClass="mainButtons, standardBoldText" maxWidth="22" maxHeight="Infinity" wrapText="true" />
+			
+					<!-- 
+					<graphic>
+						<CheckBox fx:id="fulLDebugCheckbox" onAction="#clickFullDebugCK" text="DBG" ></CheckBox>
+					</graphic>
+					
+					
+			</Button>
+			-->
+		</HBox>
+	 
+		
+				<!-- 
+		
+						<graphic>
+					<HBox alignment="center" spacing="10">
+						<ImageView fitHeight="20.0" pickOnBounds="true" preserveRatio="true">
+		        			<Image url="/guiGraphics/if_tools.png" />
+		        		</ImageView>
+				        <Text styleClass="standardBoldText">Tools</Text>
+		        	</HBox>
+	        	</graphic>
+	        	
+		 -->
+
+</GridPane>

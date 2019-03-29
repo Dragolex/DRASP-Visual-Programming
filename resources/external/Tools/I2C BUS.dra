@@ -1,0 +1,41 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+465
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: Verifies, enables and scans the I2C Bus
+	EvInit
+		ElWindCreate
+		|&Vari: #mainWindow
+		|Number: 400.0
+		|Number: 300.0
+		|Text: I2C BUS
+		ElExecCommand
+		|Bool: True
+		|&Vari: #i2cState
+		|Text: sudo raspi-config nonint get_i2c
+		|Bool: True
+			ConIfTexVar
+			|Vari: #i2cState
+			|Text: 1
+				ElWindText
+				|&Vari: #i2cStateLabel
+				|Text: The I2C Bus is DISABLED!
+				|Number: 8.0
+				|Text: 000000
+			StElse
+				ElWindText
+				|&Vari: #i2cStateLabel
+				|Text: The I2C Bus is ENABLED!
+				|Number: 8.0
+				|Text: 000000
+			ElPlaceltem
+			|Vari: #mainWindow
+			|Vari: #i2cStateLabel
+			|~CalcValueTerm: 20.0
+			|~CalcValueTerm: 20.0
+
+COLLAPSED NODES BITMAP
+ACA=

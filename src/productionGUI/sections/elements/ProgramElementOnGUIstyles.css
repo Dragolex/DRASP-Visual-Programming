@@ -1,0 +1,68 @@
+.elementContainer
+{
+	-fx-padding: 0;
+
+	/*-fx-background-color: elementBackgroundColor;*/
+	-fx-background-radius: 0 5 5 5;
+
+	-fx-border-color: elementBorderColor;
+	-fx-border-radius: 0 5 5 5;
+	-fx-border-width: 0.75 0.75 1.5 0.75;
+
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+}
+
+.dashedBottom
+{
+	-fx-border-style: solid solid dashed solid;
+}
+
+
+.variableSplitter
+{
+	-fx-background-color: transparent;
+	
+	-fx-padding: 2 6 2 -4;
+}
+
+.variableSplitter>.split-pane-divider
+{
+	 -fx-padding: 0 0 0 1;
+
+	 -fx-background-color: elementBorderColor;
+}
+
+.childElementsLabel
+{
+	-fx-padding: 0 0 0 0;
+}
+
+#basePane
+{
+	
+}
+
+
+TextField
+{
+	-fx-padding: 0;
+	-fx-background-color: baseColorAfull;
+	-fx-accent: shadowedColorA;
+	-fx-text-fill: white;
+}
+TextField:focused
+{
+	-fx-background-color: shadowColorA;
+}
+TextField:disabled
+{
+	-fx-opacity: 1;
+}
+
+
+#revertButtonBox
+{
+	-fx-max-width: 40;
+}
+
+

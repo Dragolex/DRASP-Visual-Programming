@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<!-- Represents the main window -->
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+		  fx:id="mainPane" vgap="5">
+
+
+	<padding>
+		<Insets top="12" right="12" bottom="12" left="12"/>
+	</padding>
+	
+	
+		<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="basicRounded" maxHeight="Infinity" maxWidth="Infinity">
+
+		
+			<center>
+				<ScrollPane  fitToWidth="true"  fx:id="scrollPane" styleClass="basicRounded, sectionBorder" style="-fx-padding: 0" prefWidth="10000" prefHeight="10000">
+				
+					<VBox styleClass="section" style="-fx-padding: 0" fx:id="sectionBox" prefWidth="10000">
+												
+						<HBox styleClass="sectionTitleContainerAlt" alignment="TOP_CENTER" prefWidth="10000"> <!-- GridPane.hgrow="always" GridPane.vgrow="always" -->
+							<Label styleClass="standardBoldText" fx:id="titleText" text="A"/>
+						</HBox>
+						
+						<SplitPane styleClass="section" style="-fx-padding: 0" fx:id="elementsSplitPane" dividerPositions="0.4, 0.7" focusTraversable="false" prefWidth="10000">
+						<items>
+						
+							<VBox xmlns:fx="http://javafx.com/fxml/1"
+									  styleClass="contentFlowPane"
+									  fx:id="contentA"
+							    	  spacing="5" prefWidth="10000">
+								<!-- Content -->
+							</VBox>
+							<VBox xmlns:fx="http://javafx.com/fxml/1"
+									  styleClass="contentFlowPane"
+									  fx:id="contentB"
+							    	  spacing="5" prefWidth="10000">
+								<!-- Content -->
+							</VBox>
+							<VBox xmlns:fx="http://javafx.com/fxml/1"
+									  styleClass="contentFlowPane"
+									  fx:id="contentC"
+							    	  spacing="5" prefWidth="10000">
+								<!-- Content -->
+							</VBox>
+						
+						</items>
+						</SplitPane>
+						
+						
+						<HBox styleClass="sectionTitleContainerAlt" alignment="TOP_CENTER" prefWidth="10000"> <!-- GridPane.hgrow="always" GridPane.vgrow="always" -->
+							<Label styleClass="standardBoldText" fx:id="titleText2" text="B"/>
+						</HBox>
+						
+						<SplitPane styleClass="section" style="-fx-padding: 0" fx:id="elementsSplitPane2" dividerPositions="0.4, 0.7" focusTraversable="false" prefWidth="10000">
+						<items>
+						
+							<VBox xmlns:fx="http://javafx.com/fxml/1"
+									  styleClass="contentFlowPane"
+									  fx:id="contentD"
+							    	  spacing="5" prefWidth="10000">
+								<!-- Content -->
+							</VBox>
+							<VBox xmlns:fx="http://javafx.com/fxml/1"
+									  styleClass="contentFlowPane"
+									  fx:id="contentE"
+							    	  spacing="5" prefWidth="10000">
+								<!-- Content -->
+							</VBox>
+							<VBox xmlns:fx="http://javafx.com/fxml/1"
+									  styleClass="contentFlowPane"
+									  fx:id="contentF"
+							    	  spacing="5" prefWidth="10000">
+								<!-- Content -->
+							</VBox>
+						
+						</items>
+						</SplitPane>
+						
+					
+					</VBox>
+					
+				</ScrollPane>
+			</center>
+			
+		</BorderPane>
+
+	<stylesheets>
+	    <URL value="@../CSS/ThemeColors.css" />
+	    <URL value="@../CSS/StaticStyles.css" />
+	    <URL value="@../CSS/CustomStyles.css" />
+	    <URL value="@SettingsStyles.css" />
+	</stylesheets>
+
+</GridPane>

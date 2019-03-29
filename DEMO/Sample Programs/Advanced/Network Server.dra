@@ -1,0 +1,51 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: The Server meant to connectible for a local client
+	StComEv
+	|TextOnly: TODO: More information
+	EvInit
+		ElDefineDeviceName
+		|Text: DeviceB
+		|Bool: True
+	EvNewExtCon
+	|Text: ?
+	|&Vari: #device
+		ElWriteVariable
+		|Text: Connected: 
+		|~Vari: #device
+	EvConClosed
+	|Text: ?
+	|&Vari: #closer
+		ElWriteVariable
+		|Text: Closed: 
+		|~Vari: #closer
+	EvNetMsgReceived
+	|&Vari: #msg
+	|Text: DeviceA
+	|&Vari: #s
+	|^Bool: False
+	|^Number: 0.0
+		ElWriteVariable
+		|Text: Received: 
+		|~Vari: #msg
+	EvKeyPressed
+	|Text: Q
+		ElCloseCon
+		|Text: ?
+	EvRhythmStep
+	|Number: 2000.0
+		ConConnExist
+		|Text: ?
+			ElWriteMessage
+			|Text: Connected
+		StElse
+			ElWriteMessage
+			|Text: NOT Connected
+
+COLLAPSED NODES BITMAP
+

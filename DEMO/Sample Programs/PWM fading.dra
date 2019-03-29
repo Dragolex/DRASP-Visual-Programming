@@ -1,0 +1,25 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElSetupPinPwm
+		|Number: 18.0
+		|Number: 0.0
+		|Number: 50.0
+		StComEv
+		|TextOnly: Comment Block
+			ElPwmSetPeriodAB
+			|Number: 0.0
+			|Number: 2000.0
+			|Number: 30.0
+			|Number: 0.0
+			|Number: 1.0
+			StRepIf
+			|Number: 0.0
+			|Bool: False
+
+COLLAPSED NODES BITMAP
+w6/Cv8K9BA==

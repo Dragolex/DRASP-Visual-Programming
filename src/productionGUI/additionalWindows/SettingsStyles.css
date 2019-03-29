@@ -1,0 +1,39 @@
+Text
+{	
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+TextField
+{	
+    -fx-text-fill: black;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 18;
+}
+
+#innerPane
+{
+	-fx-padding: 15;
+	
+}
+
+
+.split-pane-divider
+{
+    /*-fx-background-color: black;*/
+    -fx-padding: 1;
+    -fx-background-color: rgba(155, 155, 155, 0.65);
+    -fx-border-color: elementBorderColor;
+	-fx-border-width: 1;
+}
+
+.contentFlowPane
+{
+    -fx-padding: 6;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+
+<!-- Represents a SplitPane -->
+
+<SplitPane focusTraversable="true" prefWidth="99999" prefHeight="99999" styleClass="outerSplitters, basicRounded">
+
+	<!-- TODO Add Nodes -->
+
+</SplitPane>
+

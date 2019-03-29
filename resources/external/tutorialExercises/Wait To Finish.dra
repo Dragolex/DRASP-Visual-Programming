@@ -1,0 +1,25 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+456
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvLabeled
+	|Label: Do Later
+	|Vari: #data
+		ElDelay
+		|Number: 2000.0
+		ElWriteVariable
+		|Text: Argument: 
+		|Vari: #data
+	EvKeyPressed
+	|Text: A
+		StLabelExecute
+		|Label: Do Later
+		|Bool: True
+		|Number: 42.0
+		ElWriteMessage
+		|Text: Pressed Key
+
+COLLAPSED NODES BITMAP
+

@@ -1,0 +1,33 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+457
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElTeleBot
+		|~Vari: #theBot
+		|Text: myLedTestBot
+		|Text: 375391311:AAGl5d5Ah9-8WoxQHE2UpHu7-X-Vf61I4Ng
+	EvTeleCommand
+	|Vari: #theBot
+	|~Vari: #msg
+	|~Text: Hello|Hi
+		ElTeleGetName
+		|~Vari: #userName
+		|Vari: #msg
+		StSetTexVar
+		|~Vari: #resp
+		|~CalcTextTerm: Hello 
+		StSetTexVar
+		|~Vari: #resp
+		|~CalcTextTerm: +=#userName
+		ElTeleSend
+		|Vari: #theBot
+		|Vari: #msg
+		|Text: #resp
+		ElWriteMessage
+		|Text: Successful!
+
+COLLAPSED NODES BITMAP
+EgAg

@@ -1,0 +1,26 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		StComEv
+		|TextOnly: List the files inside the 'external' directory (without subdirectories).
+		ElFileLoadDirContents
+		|&Vari: #list
+		|Text: external
+		|Bool: False
+		StListLoop
+		|Vari: #list
+		|&Vari: #out
+		|&Vari: #ind
+			ElWriteVariable
+			|Text: Ind: 
+			|~Vari: #ind
+			ElWriteVariable
+			|Text: Out: 
+			|~Vari: #out
+
+COLLAPSED NODES BITMAP
+

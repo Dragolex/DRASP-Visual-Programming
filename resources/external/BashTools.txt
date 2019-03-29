@@ -1,0 +1,139 @@
+[TOOL]
+shutdown
+sudo shutdown -h now
+
+[TOOL]
+reboot
+sudo reboot
+
+
+[TOOL]
+getI2C
+sudo raspi-config nonint get_i2c
+
+[TOOL]
+setI2C
+sudo raspi-config nonint set_i2c #0
+
+
+[TOOL]
+enableJFX
+// Set graphics mem
+TODO
+
+[TOOL]
+disableJFX
+TODO
+
+
+
+[Shutdown]
+Shut the target device down via the the standard call.
+[Bash]
+shutdown()
+WAITFOR(15000)
+
+[Reboot]
+Reboot (restart) the target device via the the standard call.
+[Bash]
+reboot()
+WAITFOR(40000)
+
+
+[Check I2C]
+Check whether I2C is currently enabled.
+[Bash]
+A = getI2C()
+IF A = 1 MESSAGE("I2C is currently not enabled.")
+IF A = 0 MESSAGE("I2C is currently enabled.")
+
+
+[Enable I2C]
+Enable I2C interface to use for some external chips.
+This can also be set directly on the raspberry via "raspi-config".
+[Bash]
+setI2C(0)
+MESSAGE("Successful.")
+
+[Disable I2C]
+Disable I2C.
+This can also be set directly on the raspberry via "raspi-config".
+[Bash]
+setI2C(1)
+MESSAGE("Successful.")
+
+
+
+[Enable JFX]
+Enable the JavaFX library. This is used for all window features.
+Note that this adds some libraries to the systems Java installation.
+[Bash]
+enableJFX()
+
+
+[Remove JFX]
+Removes the the JavaFX library.
+Note that this might cause problems for other programs
+if JFX has not been enabled only for DRASP.
+[Bash]
+disableJFX()
+
+
+
+
+
+[Test B]
+This is test B
+[Bash]
+TEST
+
+
+[Test A]
+This is test A
+[Bash]
+TEST
+[Test B]
+This is test B
+[Bash]
+TEST
+
+
+[Test A]
+This is test A
+[Bash]
+TEST
+[Test B]
+This is test B
+[Bash]
+TEST
+
+
+[Test A]
+This is test A
+[Bash]
+TEST
+[Test B]
+This is test B
+[Bash]
+TEST
+
+
+[Test A]
+This is test A
+[Bash]
+TEST
+[Test B]
+This is test B
+[Bash]
+TEST
+
+
+[Test A]
+This is test A
+[Bash]
+TEST
+[Test B]
+This is test B
+[Bash]
+TEST
+

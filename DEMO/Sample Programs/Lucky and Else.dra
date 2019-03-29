@@ -1,0 +1,20 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: Press CTRL key when running
+	EvKeyPressed
+	|Text: Control
+		ConIfLucky
+		|Number: 50.0
+			ElWriteMessage
+			|Text: You won! :)
+		StElse
+			ElWriteMessage
+			|Text: You lost :(
+
+COLLAPSED NODES BITMAP
+AQ==

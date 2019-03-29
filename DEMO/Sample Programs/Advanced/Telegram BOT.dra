@@ -1,0 +1,51 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: A Telegram (app) Bot that just responds to "Hi" or "Hello" with "Hello USERNAME"
+	StComEv
+	|TextOnly: To test, please do the following three steps:
+		StComEv
+		|TextOnly: 1. Install the Telegram App onto your smartphone
+		StComEv
+		|TextOnly: 2. Start (simulate) this DRASP program
+		StComEv
+		|TextOnly: 3. In Telegram, search for the user/bot "myLedTestBot"
+		StComEv
+		|TextOnly: 4. Send a message with "Hi" and see how the bot in DRASP reacts
+	EvInit
+		StComEv
+		|TextOnly: The token and name there belongs to a real bot I have registered.
+		StComEv
+		|TextOnly: The date is here only for demonstration purpose and might be invalid by now,
+		ElTeleBot
+		|&Vari: #theBot
+		|Text: myLedTestBot
+		|Text: 375391311:AAGl5d5Ah9-8WoxQHE2UpHu7-X-Vf61I4Ng
+		ElWriteMessage
+		|Text: STARTED
+	EvTeleCommand
+	|Vari: #theBot
+	|&Vari: #msg
+	|Text: Hello|Hi
+		ElTeleGetName
+		|&Vari: #userName
+		|Vari: #msg
+		StSetTexVar
+		|&Vari: #resp
+		|~CalcTextTerm: Hello 
+		StSetTexVar
+		|&Vari: #resp
+		|~CalcTextTerm: +=#userName
+		ElTeleSend
+		|Vari: #theBot
+		|Vari: #msg
+		|Text: #resp
+		ElShowMessage
+		|Text: Tested successfully!
+
+COLLAPSED NODES BITMAP
+AQ==

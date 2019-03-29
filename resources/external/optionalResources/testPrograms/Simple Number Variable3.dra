@@ -1,0 +1,16 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+453
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		StSetNumVar
+		|~Vari: #aVariable
+		|CalcValueTerm: 15.0
+		ElWriteVariable
+		|Text: The variable has the value: 
+		|Vari: #aVariable
+
+COLLAPSED NODES BITMAP
+QAAAAAAAAAAUAAABQA==

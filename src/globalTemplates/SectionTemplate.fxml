@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<!-- Represents a section -->
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="basicRounded" maxHeight="Infinity" maxWidth="Infinity">
+	<top>
+		<HBox styleClass="sectionTitleContainer" fx:id="titleBox" alignment="TOP_CENTER" > <!-- GridPane.hgrow="always" GridPane.vgrow="always" -->
+			<Label styleClass="standardBoldText" fx:id="titleText">
+			NAME
+			</Label>
+		</HBox>
+	</top>	
+
+	<center>
+		<ScrollPane fitToHeight="true" fitToWidth="true"  fx:id="scrollPane" styleClass="basicRounded, sectionBorder" GridPane.hgrow="always" GridPane.vgrow="always">
+		
+			<VBox styleClass="section" fx:id="sectionBox">
+				<Label styleClass="standardBoldText, tenPadding" fx:id="emptyRootInfoLabel">
+				</Label>
+				
+				
+				
+				
+				<VBox xmlns:fx="http://javafx.com/fxml/1"
+						  styleClass="contentFlowPane"
+						  fx:id="contentPane"
+				    	  spacing="5" maxWidth="1">
+				    	  
+				    	  
+				
+			
+					
+			
+				</VBox>
+				
+				
+				<!--
+				<FlowPane xmlns:fx="http://javafx.com/fxml/1"
+						  styleClass="contentFlowPane"
+						  fx:id="contentPane"
+				    	  orientation="horizontal"
+				    	  vgap="10" prefWrapLength="1"  maxWidth="1">
+				    	  
+				    	  
+				
+			
+					Content 
+			
+				</FlowPane> -->
+			</VBox>
+			
+		</ScrollPane>
+	</center>
+	
+</BorderPane>

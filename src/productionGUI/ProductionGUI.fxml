@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Represents the main window -->
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+		  fx:controller="productionGUI.controlers.ProductionGUIcontrol"
+		  fx:id="rootPane">
+
+	<padding>
+		<Insets top="12" right="12" bottom="12" left="12"/>
+	</padding>
+
+	<GridPane xmlns:fx="http://javafx.com/fxml/1" styleClass="basicRounded">
+		<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" styleClass="basicRounded">
+
+			<!-- Content -->
+
+		</GridPane>
+	</GridPane>
+
+
+	<stylesheets>
+	    <URL value="@CSS/ThemeColors.css" />
+	    <URL value="@CSS/StaticStyles.css" />
+	    <URL value="@CSS/CustomStyles.css" />
+	</stylesheets>
+
+</GridPane>

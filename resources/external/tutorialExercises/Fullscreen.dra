@@ -1,0 +1,27 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+456
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElWindCreate
+		|~Vari: #mainWindow
+		|Number: -1.0
+		|Number: -1.0
+		|Text: Window
+		ElWindBckgr
+		|~Vari: #background
+		|Text: external\exampleGraphics\Moon A.png
+		|Number: 4.0
+		ElPlaceItem
+		|Vari: #mainWindow
+		|Vari: #background
+		|Bool: True
+		|Number: 0.0
+	EvWindClosed
+	|Vari: #mainWindow
+		ElQuitProgram
+
+COLLAPSED NODES BITMAP
+Q8OD4oCgw6LigqzihKLDg8aSw6LigqzCoMODwqLDouKAmsKsw6I=

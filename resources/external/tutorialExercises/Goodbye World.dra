@@ -1,0 +1,14 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+456
+	
+PROGRAM ELEMENTS PAGE: Goodbye World
+Active
+	EvKeyPressed
+	|Text: Q
+		ElShowMessage
+		|Text: Goodbye World
+		ElQuitProgram
+
+COLLAPSED NODES BITMAP
+w4PCosOCAMWhw4LCrAAgAAAAAAAg

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="lib" path="libs/controlsfx-8.40.12.jar"/>
+	<classpathentry kind="lib" path="libs/reactfx-2.0-M5.jar"/>
+	<classpathentry kind="lib" path="libs/jsch-0.1.54.jar"/>
+	<classpathentry kind="lib" path="libs/javafx-mx.jar"/>
+	<classpathentry kind="lib" path="libs/jfxrt.jar"/>
+	<classpathentry kind="lib" path="libs/jfxswt.jar"/>
+	<classpathentry kind="lib" path="libs/commons-net-3.6.jar"/>
+	<classpathentry kind="lib" path="libs/junit.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/telegrambots-4.1-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="libs/scenicView.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

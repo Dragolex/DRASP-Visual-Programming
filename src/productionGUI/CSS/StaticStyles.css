@@ -1,0 +1,288 @@
+
+.root, #mainPane {
+	-fx-background-color: baseColorAfull;
+	-fx-background-image: url("/guiGraphics/Scale1.png");
+	
+	-fx-background-repeat: repeat;
+}
+
+/*
+#mainPane {
+	-fx-background-color: baseColorAfull;
+	-fx-background-image: url("/guiGraphics/Scale1.png");
+	
+	-fx-background-repeat: repeat;
+	
+	/*
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 2.25;
+	
+	
+}
+*/
+
+
+
+
+#outerMainPane
+{
+	-fx-background-color: elementBorderColor;
+	
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 2.25;
+	
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 5, 0, 0 , 1.5 );
+}
+
+#mainPane
+{
+	/*-fx-background-color: transparent;*/
+	/*-fx-effect: innershadow( three-pass-box , shadowColorB , 4, 0, 0 , 0 );*/
+}
+
+
+/* Provides rounded edges */
+
+.basicRounded {
+	-fx-background-radius: 3 3 3 3;
+	-fx-border-radius: 3 3 3 3;
+}
+.basicRoundedTEST {
+	-fx-background-radius: 5 5 5 5;
+	-fx-border-radius: 5 5 5 5;
+}
+
+
+ScrollPane
+{
+	-fx-padding: 0;
+	-fx-background-color: transparent;
+}
+
+ScrollPane *.scroll-bar, ScrollPane *.corner
+{
+	-fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(155, 155, 155, 0.65));
+	-fx-effect: dropshadow( three-pass-box , shadowColorA , 3, 0, 0 , 1 );
+
+
+	-fx-border-color: elementBorderColor;
+	-fx-border-width: 0;
+	
+	-fx-pref-width: 12;
+	-fx-pref-height: 12;
+	
+	-fx-padding: 1;
+}
+
+ScrollPane *.scroll-bar:vertical {
+	-fx-border-width: 0 0 0 1.25;
+}
+ScrollPane *.scroll-bar:horizontal {
+	-fx-border-width: 1.25 0 0 0;
+}
+
+ScrollPane *.thumb
+{
+	-fx-background-color: rgba(155, 155, 155, 0.65);
+	-fx-border-color: elementBorderColor;
+	
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+}
+
+
+ToggleSwitch
+{
+	-fx-padding: 2 0 0 0;
+	-fx-effect: dropshadow( GAUSSIAN , elementBorderColor , 2, 0.5, 0 , 0 );
+}
+
+.centerBox {
+	-fx-alignment: CENTER;
+}
+
+.noPadding {
+	-fx-padding: 0;
+}
+
+.titleText
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+.chapterText
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+.subChapterText
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+
+.standardText
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 18;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+.standardBoldText, .alertDialog:header *.header-panel *.label
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+
+.mediumText
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+	-fx-font-weight: normal;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 14;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 5, 0, 0, 1 );
+}
+
+.mediumTextBold
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 5, 0, 0, 1 );
+}
+
+.biggerMediumText
+{
+    -fx-text-fill: baseContentTextColor;
+    -fx-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 17;
+    -fx-font-weight: bold;
+    
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 6, 0, 0, 1 );
+}
+
+
+
+
+.mediumTextUnshadowed
+{
+    -fx-text-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 14;
+}
+
+.smallText
+{
+    -fx-text-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 4, 0, 0, 1 );
+}
+.reallySmallText
+{
+    -fx-text-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 9;
+    -fx-font-weight: bold;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 4, 0, 0, 1 );
+}
+
+
+.elementContentText
+{
+	-fx-text-fill: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 13;
+	-fx-font-weight: bold;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 5, 0, 0, 1 );
+}
+.elementContentTextLarge, .alertDialog > *.label.content
+{
+	-fx-text-fill: baseContentTextColor;
+	-fx-text: baseContentTextColor;
+
+    -fx-font-family: "Arial";
+    -fx-font-size: 15;
+	-fx-font-weight: bold;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5) , 5, 0, 0, 1 );
+}
+
+
+.fivePadding
+{
+	-fx-padding: 5;
+}
+.tenPadding
+{
+	-fx-padding: 10;
+}
+
+.transparentScrollPane
+{
+	-fx-background-color:transparent;
+}
+
+
+.transparentScrollPane > .viewport
+{
+	-fx-background-color: transparent;
+}
+
+
+.buttonInnerPane
+{
+	-fx-padding: 0 5 0 5;
+}
+

@@ -1,0 +1,64 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+464
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElWindCreate
+		|&Vari: #window
+		|Number: 1.0
+		|Number: 1.0
+		|Text: Set Wlan
+		ElShowMessage
+		|Text: This tool enables you to prepare the wlan settings your PI will use and turn SSH access on.\nFor this purpose you have to put the microSD-card flashed with Raspbian into this computer.\n\nAfter you have provided the wlan settings and chosen the small\nuniversally accessible partition on the SD card,\nthe tool will create the files named "wpa_supplicant.conf" and "ssh" on it\nwhich are loaded by the Raspberry Pi automatically on booting.
+		StComEv
+		|TextOnly: Reading the dummy file
+			ElReadFile
+			|Text: \external\RaspiSDcardPreparationFiles\wpa_supplicant.conf
+			|&Vari: #confData
+		StComEv
+		|TextOnly: Asking user for wlan settings
+			ElGetInputTx
+			|Text: Provide the SSID (wlan name)
+			|&Vari: #name
+			StReplaceText
+			|Text: #confData
+			|Text: WLANNAME
+			|Text: #name
+			|&Vari: #confData
+			ElGetInputTx
+			|Text: Provide the PASSWORD
+			|&Vari: #pass
+			StReplaceText
+			|Text: #confData
+			|Text: PASSWORD
+			|Text: #pass
+			|&Vari: #confData
+		ElShowMessage
+		|Text: Next you have to chose the ~42mb sized "boot" partition on the SD card.\nDo not select a subdirectory!
+		ElGetFilePath
+		|&Vari: #bootDir
+		|Vari: #window
+		|Text: Chose the boot drive
+		|Bool: True
+		StComEv
+		|TextOnly: Copy the empty file "ssh"
+			ElCopyFile
+			|Text: \external\RaspiSDcardPreparationFiles\ssh
+			|Text: #bootDir
+			|Bool: False
+			|Bool: True
+		StComEv
+		|TextOnly: Preparing the file path for the wpa config and write the file
+			StSetTexVar
+			|&Vari: #bootDir
+			|~CalcTextTerm: +=\wpa_supplicant.conf
+			ElWriteFile
+			|Text: #bootDir
+			|Text: #confData
+		ElShowMessage
+		|Text: Files "wpa_supplicant.conf" and "ssh" written successfully!\nNow you can place the SD card back into the Raspberry Pi.
+
+COLLAPSED NODES BITMAP
+AAAC

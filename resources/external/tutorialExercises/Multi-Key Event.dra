@@ -1,0 +1,15 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+457
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvKeyPressed
+	|Text: A
+		ConKeyDown
+		|Text: Control
+			ElWriteMessage
+			|Text: Successful!
+
+COLLAPSED NODES BITMAP
+AhLCoA==

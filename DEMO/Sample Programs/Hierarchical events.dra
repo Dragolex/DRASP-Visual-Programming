@@ -1,0 +1,23 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: Try to press <A> or <B>
+	EvKeyPressed
+	|Text: A
+		ElWriteMessage
+		|Text: A
+		StComEv
+		|TextOnly: Surrounding events automatically trigger children-events
+		StComEv
+		|TextOnly: This can be seen as an "OR" statement
+		EvKeyPressed
+		|Text: B
+			ElWriteMessage
+			|Text: B
+
+COLLAPSED NODES BITMAP
+AQAAAg==

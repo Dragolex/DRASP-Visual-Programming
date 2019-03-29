@@ -1,0 +1,40 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This demonstrates how variables can easily be persisted (serialized) to a file.
+	StComEv
+	|TextOnly: Start the program twice to see the effect.
+	EvInit
+		StComEv
+		|TextOnly: Attempting to load from the file "DataFile.dat" (relative path)
+		ElLoadVar
+		|Text: DataFile.dat
+		|&Vari: #FirstVariable
+			StComEv
+			|TextOnly: Those sub-elements are only executed when the variable could NOT be loaded.
+			StComEv
+			|TextOnly: Therefore the variable should get a default value/text here.
+			StSetTexVar
+			|&Vari: #FirstVariable
+			|~CalcTextTerm: Default
+		ElShowVariable
+		|Text: The variable has the text: 
+		|~Vari: #FirstVariable
+	EvKeyPressed
+	|Text: CONTROL
+		ElGetInputTx
+		|Text: Please type some text that shall be saved
+		|&Vari: #FirstVariable
+		StComEv
+		|TextOnly: Saving the new text for the variable into the file.
+		ElSaveVar
+		|Text: DataFile.dat
+		|~Vari: #FirstVariable
+		ElQuitProgram
+
+COLLAPSED NODES BITMAP
+AwMAAg==

@@ -1,0 +1,68 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This program demonstrates how broad keyboard inputs can be caught.
+	EvInit
+		StSetTexVar
+		|&Vari: #currentLine
+		|~CalcTextTerm: - 
+		StSetNumVar
+		|&Vari: #lineY
+		|CalcValueTerm: 40.0
+		StComEv
+		|TextOnly: Create the window
+			ElWindCreate
+			|&Vari: #mainWind
+			|Number: 500.0
+			|Number: 300.0
+			|Text: Type Something
+			ElWindText
+			|&Vari: #typingLine
+			|Text: Type and press <Enter>
+			|Number: 11.0
+			|Text: 000000
+			|~Vari: #currentLine
+			ElPlaceltem
+			|Vari: #mainWind
+			|Vari: #typingLine
+			|~CalcValueTerm: 10.0
+			|~CalcValueTerm: 10.0
+	StComEv
+	|TextOnly: This single event catches all keys. Note the special keywords for "Key Name".
+	EvKeyPressed
+	|Text: Any_Lower, Any_Upper
+	|Bool: True
+	|&Vari: #pressedKey
+		ElWriteVariable
+		|Text: Pressed: 
+		|~Vari: #pressedKey
+		StSetTexVar
+		|&Vari: #currentLine
+		|~CalcTextTerm: +=#pressedKey
+	EvKeyPressed
+	|Text: Enter
+		StComEv
+		|TextOnly: A new text label is created for every text line
+		ElWindText
+		|&Vari: #sprNewestText
+		|Text: #currentLine
+		|Number: 9.0
+		|Text: 000000
+		StSetNumVar
+		|&Vari: #lineY
+		|CalcValueTerm: +=30.0
+		ElPlaceltem
+		|Vari: #mainWind
+		|Vari: #sprNewestText
+		|~CalcValueTerm: 10.0
+		|~CalcValueTerm: #lineY
+		StSetTexVar
+		|&Vari: #currentLine
+		|~CalcTextTerm: - 
+
+COLLAPSED NODES BITMAP
+AQ==

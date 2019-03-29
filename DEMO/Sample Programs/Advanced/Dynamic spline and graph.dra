@@ -1,0 +1,82 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This program demonstrates a spline and visualizes it as a graph
+	EvInit
+		StComEv
+		|TextOnly: Create the interpolated spline with a couple of values
+			StCreateSpline
+			|&Vari: #spline
+			|Bool: True
+			|Bool: True
+			StSplineNodeDir
+			|Vari: #spline
+			|Number: 0.0
+			|Number: 10.0
+			StSplineNodeDir
+			|Vari: #spline
+			|Number: 10.0
+			|Number: 5.0
+			StSplineNodeDir
+			|Vari: #spline
+			|Number: 20.0
+			|Number: 25.0
+			StComEv
+			|TextOnly: One point on the spline is attached to a variable.
+				StSetNumVar
+				|&Vari: #variable
+				|CalcValueTerm: 15.0
+				StSplineNodeVar
+				|Vari: #spline
+				|Number: 35.0
+				|~Vari: #variable
+			StSplineNodeDir
+			|Vari: #spline
+			|Number: 50.0
+			|Number: -5.0
+		StComEv
+		|TextOnly: Visualize the spline as a graph on a window
+			ElWindCreate
+			|&Vari: #window
+			|Number: 500.0
+			|Number: 300.0
+			ElNewGraph
+			|&Vari: #graph
+			|Vari: #spline
+			|Number: 400.0
+			|Number: 250.0
+			ElCoordAxis
+			|Vari: #graph
+			|Number: 0.0
+			|Number: 50.0
+			|Number: 0.0
+			|Number: 10.0
+			|Number: -50.0
+			|Number: 50.0
+			ElPlaceltem
+			|Vari: #window
+			|Vari: #graph
+			|~CalcValueTerm: 50.0
+			|~CalcValueTerm: 25.0
+	EvRhythmStep
+	|Number: 1000.0
+		StComEv
+		|TextOnly: Changing the variable alters the graph automatically
+		StSetNumVar
+		|&Vari: #variable
+		|CalcValueTerm: 15.0
+		ElDelay
+		|Number: 500.0
+		StSetNumVar
+		|&Vari: #variable
+		|CalcValueTerm: -3.0
+	EvKeyPressed
+	|Text: Q
+		ElQuitProgram
+
+COLLAPSED NODES BITMAP
+QxEAAw==

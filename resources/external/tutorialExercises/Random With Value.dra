@@ -1,0 +1,21 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+457
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvKeyPressed
+	|Text: Control
+		StSetRanVar
+		|~Vari: #rand
+		ConIfNumVar
+		|~Vari: #rand
+		|~CompTerm: >0.5
+			ElWriteMessage
+			|Text: You won! :)
+		StElse
+			ElWriteMessage
+			|Text: You lost :(
+
+COLLAPSED NODES BITMAP
+AggQ

@@ -1,0 +1,64 @@
+/* This document determines general variables settings to use in the other documents */
+
+* {
+	baseColorA: rgba(68, 119, 185, 0.5);
+	baseColorAfull: rgba(60, 109, 185, 1); 	/*baseColorAfull: rgba(68, 119, 200, 1);*/
+	baseColorAdarkFull: rgba(58, 110, 190, 0.5);
+	shadowedColorA: rgba(26, 130, 255, 0.5); /* #1a8cff */
+	shadowColorA: rgba(0, 90, 204, 0.6);
+	
+	baseColorWeakA: rgba(68, 119, 200, 0.35);
+
+	hoverColorA: rgba(60, 74, 200, 0.4);
+
+	/*baseColorB: rgba(255, 132, 141, 0.5);*/
+
+	baseColorB: rgba(110, 155, 225, 0.5); /* #80b3ff */
+	baseColorBfull: rgba(110, 155, 225, 1); /* baseColorBfull: rgba(128, 179, 255, 1); #80b3ff     rgba(120, 165, 235, 1)*/
+	shadowedColorB: rgba(204, 0, 14, 0.5);
+	shadowColorB: rgba(254, 70, 0, 0.4);
+	
+	baseColorWeakB: rgba(128, 179, 255, 0.25); /* #80b3ff */
+
+	elementBorderColor: rgba(0, 0, 150, 1);
+	elementBackgroundColor: linear-gradient(baseColorA, shadowedColorA);
+
+	selectedElementBackgroundColor: linear-gradient(shadowedColorA, shadowColorA);
+	selectedHoverElementBackgroundColor: linear-gradient(hoverColorA, rgba(60, 74, 200, 0.6));
+
+
+	splitBarColor: linear-gradient(baseColorB, shadowedColorB);
+	baseContentTextColor: white;
+	backgroundGradient: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+
+	graphBackgroundGradient: rgba(255,255,255,0.25); /*linear-gradient(rgba(255,255,255,0.5), rgba(0,0,0,0.5));*/
+
+	positiveFocusCol: rgba(0, 200, 100, 0.4);
+
+	alertMessageBackgroundColor: rgba(180, 29, 15, 1);	
+	
+	actionsColorTop: rgba(58, 109, 190, 0.5);
+	actionsColorBottom: rgba(98, 149, 230, 0.5);
+	actionsColorDarkened: rgba(48, 99, 170, 0.5);
+	actionsColorDarkenedHover: rgba(38, 79, 140, 0.5);
+	
+	conditionsColorTop: rgba(200, 170, 0, 0.5);
+	conditionsColorBottom: rgba(230, 200, 0, 0.5);
+	conditionsColorDarkened: rgba(170, 140, 0, 0.5);
+	conditionsColorDarkenedHover: rgba(145, 115, 0, 0.5);
+	
+	eventsColorTop: rgba(100, 180, 20, 0.5);
+	eventsColorBottom: rgba(130, 210, 50, 0.5);
+	eventsColorDarkened: rgba(80, 150, 10, 0.5);
+	eventsColorDarkenedHover: rgba(60, 125, 0, 0.5);
+	
+	structuresColorTop: rgba(140, 30, 200, 0.5);
+	structuresColorBottom: rgba(160, 40, 160, 0.5);
+	structuresColorDarkened: rgba(120, 20, 190, 0.5);
+	structuresColorDarkenedHover: rgba(100, 0, 160, 0.5);
+
+
+	markedColor: rgba(0, 0, 160, 0.5);
+
+
+}

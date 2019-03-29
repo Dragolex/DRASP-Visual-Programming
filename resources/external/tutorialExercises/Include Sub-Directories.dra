@@ -1,0 +1,26 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+456
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElFileLoadDirContents
+		|~Vari: #filesList
+		|Text: external
+		|Bool: True
+		StListLoop
+		|Vari: #filesList
+		|~Vari: #fileName
+		|~Vari: #ind
+			ElWriteVariable
+			|Text: File number: 
+			|Vari: #ind
+			ElWriteVariable
+			|Text: File path: 
+			|Vari: #fileName
+			ElDelay
+			|Number: 500.0
+
+COLLAPSED NODES BITMAP
+AgFA

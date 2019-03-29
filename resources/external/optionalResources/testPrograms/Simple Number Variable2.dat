@@ -1,0 +1,15 @@
+0: |I|EXECUTION INFO: VERIFYING PROGRAM PAGE: Main
+1: |I|EXECUTION INFO: COMPILING PROGRAM
+2: |I|EXECUTION INFO: LAUNCHING EXECUTION
+3: |I|EXECUTION INFO: STARTED THREAD FOR EVENT: EvInit
+4: |I|EXECUTION INFO: PREPARING EVENT: EvInit
+5: Start executing event 'EvInit Main:0'
+6: Executing element 'StSetNumVar'
+7: Element parameters: - Param 0: #aVariable - Param 1: 15.0 
+8: Variable '#aVariable' of type 'Number' initialized to default: 0.0
+9: Variable '#aVariable' of type 'Number' updated to: 15.0
+10: Executing element 'ElWriteVariable'
+11: Element parameters: - Param 0: "The variable has the value: " - Param 1: 15.0 
+12: The variable has the value: 15.0
+13: Finished executing event 'EvInit #Main:0'
+14: |I|EXECUTION INFO: No more events running. PROGRAM FINISHED!

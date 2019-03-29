@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import org.controlsfx.control.*?>
+
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="basePane" minWidth="500">
+
+	<HBox styleClass="elementContainer, selectable" fx:id="container" alignment="CENTER_LEFT">
+
+		<Label fx:id="childsLabel" styleClass="smallText, childElementsLabel" text="   " minWidth="17"/>
+
+		<SplitPane fx:id="elementsSplitPane" dividerPositions="0.25, 0.45, 0.7, 0.95" focusTraversable="false" styleClass="variableSplitter">
+
+			<!-- content -->
+
+		</SplitPane>
+		
+	</HBox>
+
+
+	<stylesheets>
+	    <URL value="@ProgramElementOnGUIstyles.css" />
+	</stylesheets>
+
+
+</AnchorPane>
+

@@ -1,0 +1,11 @@
+0: |I|EXECUTION INFO: CHECKING PROGRAM
+1: |I|EXECUTION INFO: Gathered program page: Main
+2: |I|EXECUTION INFO: COMPILING PROGRAM
+3: |I|EXECUTION INFO: LAUNCHING EXECUTION
+4: |I|EXECUTION INFO: Created EventHandler
+5: |I|EXECUTION INFO: STARTED THREAD FOR EVENT: EvInit
+6: |I|EXECUTION INFO: PRECOMPILING EVENT: EvInit
+7: Variable '#aVariable' of type 'Number' updated to: 0.0
+8: Variable '#aVariable' of type 'Number' updated to: 15.0
+9: The variable has the value: 15.0
+10: |I|EXECUTION INFO: No more events running. PROGRAM FINISHED!

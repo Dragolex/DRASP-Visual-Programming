@@ -1,0 +1,23 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+457
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	EvInit
+		ElTeleBot
+		|~Vari: #theBot
+		|Text: myLedTestBot
+		|Text: 375391311:AAGl5d5Ah9-8WoxQHE2UpHu7-X-Vf61I4Ng
+	EvTeleCommandExt
+	|Vari: #theBot
+	|~Vari: #msg
+	|~Text: Toggle GPIO [N0]
+	|^Bool: True
+	|^Number: 50.0
+	|~Vari: #gpio
+		ElToggleIO
+		|Number: #gpio
+
+COLLAPSED NODES BITMAP
+EQAg

@@ -1,0 +1,44 @@
+DRASP Program
+STANDARD ELEMENTS VERSION
+468
+	
+PROGRAM ELEMENTS PAGE: Main
+Active
+	StComEv
+	|TextOnly: This demonstrates some file reading.
+	EvInit
+		StComEv
+		|TextOnly: Read the file into a single text with new-line symbols
+			ElReadFile
+			|Text: \external\RaspiSDcardPreparationFiles\wpa_supplicant.conf
+			|&Vari: #confData
+		StComEv
+		|TextOnly: Split the text by the new-line symbols and output every resulting line
+			StSetListText
+			|&Vari: #linesList
+			|Number: 0.0
+			|~CalcTextTerm: #confData
+			|Text: \r\n
+			StListLoop
+			|Vari: #linesList
+			|&Vari: #line
+				ElWriteVariable
+				|Text: Line: 
+				|~Vari: #line
+		StComEv
+		|TextOnly: The list is turned back into a single text with the new-line symbols
+			StListToText
+			|Vari: #linesList
+			|&Vari: #reassembled
+			|Text: \r\n
+			ElWriteVariable
+			|Text: Reassembled: 
+			|~Vari: #reassembled
+			StComEv
+			|TextOnly: This resulting text could be written to a file now
+				-ElWriteFile
+				|Text: $NOTSET$
+				|Text: $NOTSET$
+
+COLLAPSED NODES BITMAP
+AQ==

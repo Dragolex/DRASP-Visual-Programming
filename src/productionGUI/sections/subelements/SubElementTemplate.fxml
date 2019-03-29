@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+
+
+<!-- Variable name segment -->
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="splitSegment" fx:id="container">
+
+	<Label styleClass="elementContentText" text="" fx:id="contentLabel" />
+	<ImageView fx:id="raspiSymbol" fitHeight="17.0" pickOnBounds="true" preserveRatio="true" managed="false" visible="false">
+		<Image url="/guiGraphics/Raspi_Small.png" />
+	</ImageView>
+	<TextField styleClass="elementContentTextField" text="" fx:id="contentField"/>
+	
+</HBox>

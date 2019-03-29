@@ -1,0 +1,2306 @@
+
+
+[T]DRASP
+
+
+[C]ABOUT DRASP
+DRASP is an event-based programming language and integrated development environment (IDE).
+It allows to develop and test programs on a PC and automatically deploy them on a Raspberry PI to run.
+
+
+
+[C]TUTORIALS
+The following overview will provide you several tutorials explaining how to program
+with DRASP in a practical way. Just click onto the buttons to open details.
+
+It's recommended to begin with the 'Hello World' tutorial.
+Preceding tutorials will flash green ( [GREENRECT] )
+and follow-up tutorials will appear yellow ( [YELLOWRECT] ).
+
+HINT: Read the appearing texts during the tutorials.
+They will provide you precious information to speed up the learning process.
+
+
+%[S]Hello World
+
+[TUT X Hello World] 0
+[KNOW]
+- NONE
+[GOAL]
+Display a popup with custom text
+[LEARN]
+- Event + Action concept
+
+[ELEMENT EvenBaseNode]
+Click onto the '[ELNAME]' event category
+to open a selection of events.
+[E]
+All elements of programs are forming a tree-structure.
+Note the meaning of the bottom line and number:
+[INNERIMG /tutorialGraphics/hintHiddenSubElement.png] -> Element with 3 hidden children
+[INNERIMG /tutorialGraphics/hintOptionalSubElement.png] -> 4th Element with visible children
+[INNERIMG /tutorialGraphics/hintNormalElement.png] -> 5th, normal element
+
+[ELEMENT EvInit]
+[TARGET 0]
+Drag an '[ELNAME]' event onto the top
+of the main program window.
+[E]
+Events determine when something happens
+while your program runs.
+In this case: Instantly when starting.
+
+[ELEMENT ActInputOutput]
+Click onto the '[ELNAME]' action category
+to open a selection of actions.
+[E]
+Actions are elements with an effect to
+hardware or the screen when executed.
+
+[ELEMENT ElShowMessage]
+[TARGET 1]
+[PARENTTARGET 0]
+Drag a '[ELNAME]' action as a sub-element
+for the Initialization event.
+Drag directly on top or shift from below.
+[E]
+Note the preview-rectangle:
+[GREENRECT] -> Valid
+[YELLOWRECT] -> Accepted but never executed
+[REDRECT] -> Invalid
+
+[PARAMETER 0]
+[TARGET 1]
+Click next to '[ARGNAME]' to set the parameter.
+For example type "Hello World" and press <Enter>.
+[E]
+Parameters influence the element behavior.
+In this case this determines the text
+which will be shown in the popup.
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+[E]
+You will see how elements flash up green
+inside the program window.
+That signalizes current execution.
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Programs can be created and simulated
+- They consist of events and elements like actions
+- The initialization event is executed automatically at start 
+- The popup action displays information to the user
+[E]
+
+DRASP is an event-based programming environment.
+That means that everything that determines the behavior of the
+resulting program is inside or part of a so called 'Event'.
+
+Every event contains a condition (see their tooltip) which is
+evaluated constantly while the program runs.
+When the condition is validated positively, its nested
+'child' or 'sub'-elements are executed.
+
+
+[EXERCISE Goodbye World]
+GOAL:
+Show a text popup when you
+press a key on the keyboard.
+[E]
+HINTS:
+Keyboard-related events are
+found under "Hardware Input".
+
+To quit the program,
+use the action in "Basic".
+
+[ENDTUT]
+
+
+
+
+
+[TUT X Light with Afterglow] 0
+[KNOW]
+- NONE
+[GOAL]
+Light an LED and turn off with delay
+[LEARN]
+- Alarms
+
+
+[ELEMENT EvenInputNode]
+Open the '[ELNAME]' event category.
+[E]
+You will be able to simulate the input
+on your computer as well.
+
+[ELEMENT EvGPIOchanged]
+[TARGET 0]
+Drag a '[ELNAME]' event to the top
+of your program.
+[E]
+This executes when a hardware pin (GPIO)
+either connects to electrical ground (false)
+or electrical power (true).
+
+[PARAMETER 0]
+[TARGET 0]
+Chose the '[ARGNAME]' - number.
+Between 0 and 39. E.g. 4.
+[E]
+You can just click in the appearing
+info-window to chose a pin easier.
+
+
+[ELEMENT EvGPIOchanged]
+[TARGET 1]
+[PARENTTARGET 0]
+Now drag another '[ELNAME]' - event.
+Place it as a CHILD-element!
+[E]
+Nested events allow to execute tasks
+when either event triggers. This results
+in a logical OR on the events conditions.
+
+
+[PARAMETER 0]
+[TARGET 1]
+Same pin as before. E.g. 4.
+
+[PARAMETER 1]
+[TARGET 1]
+[CONTENT False]
+This event should trigger when
+the state has changed to False!
+
+
+[ELEMENT ActBasicNode]
+Open the [ELNAME] actions.
+
+[ELEMENT ElSetIO]
+[TARGET 2]
+[PARENTTARGET 1]
+Add an [ELNAME] - action
+as a child of the second event.
+[E]
+This action should turn the light on.
+
+[PARAMETER 0]
+[TARGET 2]
+Chose the pin for the led or lamp.
+E.g. 17.
+
+[PARAMETER 1]
+[TARGET 2]
+[CONTENT True]
+To turn on, set it to 'True'.
+
+[ELEMENT StruLabelNode]
+Now open the '[ELNAME]' - category.
+[E]
+Here you find elements related to '[ELNAME]'.
+Those are special parts of your program
+which can be executed
+on command by other elements.
+
+[ELEMENT StLabelAlarm]
+[TARGET 3]
+[PARENTTARGET 1]
+We want to alarm a label.
+Therefore add '[ELNAME]' as a child.
+[E]
+This is the calling element which
+will trigger the
+'Labeled Event' we will add afterwards.
+
+[PARAMETER 0]
+[TARGET 3]
+[CONTENT #lightsOff]
+Type the name of the target.
+In this case: #lightsOff
+
+[PARAMETER 1]
+[TARGET 3]
+When should the alarm trigger?
+E.g. after 2000 milliseconds.
+[E]
+After this time has run up, label
+with the given name, will execute.
+
+[PARAMETER 2]
+[TARGET 3]
+[CONTENT True]
+We want to overwrite the
+current state. Therefore: True
+[E]
+By overwriting, we push the execution
+of the alarm further and further and further back.
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME] - events.
+
+[ELEMENT EvLabeled]
+[TARGET 4]
+Add a '[ELNAME]' to the root
+of your program (far left).
+[E]
+This type of event only triggers
+when it is 'called' by an element like "Alarm Label".
+
+[PARAMETER 0]
+[TARGET 4]
+[CONTENT #lightsOff]
+type the same name as before:
+#lightsOff
+
+[ELEMENT ElSetIO]
+[TARGET 5]
+[PARENTTARGET 4]
+To turn the light off here,
+add '[ELNAME]'.
+
+[PARAMETER 0]
+[TARGET 5]
+Same pin as before. E.g. 17.
+
+[PARAMETER 1]
+[TARGET 5]
+[CONTENT False]
+Set to false to turn off.
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to test.
+'Stop' when you have tried it out.
+[E]
+Click onto the switch inside
+the appearing Info-Window to
+try out the functionality.
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Alarms can be used to execute something later
+- Alarms can be overwritten
+[E]
+
+Alarms are a system that enables you to write
+simpler programs since you do not need to handle
+delays manually with multiple elements.
+[ENDTUT]
+
+
+
+
+
+
+
+[TUT X Print Input] 0
+[KNOW]
+- Event + Action concept
+
+[GOAL]
+Print user input onto the 'console'
+
+[LEARN]
+- Use simple variable
+- The 'console'
+
+
+[ELEMENT EvenBaseNode]
+Click onto the '[ELNAME]' event category
+to open basic events again.
+
+[ELEMENT EvInit]
+[TARGET 0]
+Drag an '[ELNAME]' event onto the top
+of the main program window.
+[E]
+The '[ELNAME]' event always executes before
+any other event is evaluated.
+Therefore this is the place where
+so called 'variables' should be initialized.
+
+[ELEMENT ActInputOutput]
+Click onto the '[ELNAME]' action category
+to open input- and output-actions.
+[E]
+This time we will use an input action.
+
+
+[ELEMENT ElGetInputTx]
+[TARGET 1]
+[PARENTTARGET 0]
+Drag an '[ELNAME]' action into the
+initialization event.
+[E]
+When '[ELNAME]' is executed, it opens
+a dialog field where the user can type text.
+
+[PARAMETER 0]
+[TARGET 1]
+Click next to '[ARGNAME]' to provide
+a hint for the user what to type.
+[E]
+This will just be displayed above the textfield.
+Example: "Please type anything."
+
+[PARAMETER 1]
+[TARGET 1]
+Click next to '[ARGNAME]' to set the name
+of the 'variable'. For example: "[#]input".
+[E]
+Variables are named pieces of data.
+In this case, the user's input text
+will become the data associated to the name.
+Variables always have to start with '[#]'.
+
+
+
+[ELEMENT EvenInputNode]
+Click onto the '[ELNAME]' event category
+to open input events.
+
+
+[ELEMENT EvKeyPressed]
+[TARGET 2]
+Drag an '[ELNAME]' event into the program.
+It has to be outside of the initialization.
+
+
+[PARAMETER 0]
+[TARGET 2]
+Click next to '[ARGNAME]' to provide
+the keyboard button which should activate
+the event. For Example the letter: 'A'.
+[E]
+All letters and some special keys are allowed.
+
+
+[ELEMENT ElWriteVariable]
+[TARGET 3]
+[PARENTTARGET 2]
+Drag an '[ELNAME]' action into the
+"Keyboard Pressed" event.
+[E]
+It will write the content of a given variable
+to the a window called 'Program Output'.
+It appears when you simulate or deploy
+your program.
+Often it's referred to as the "Console".
+
+
+[PARAMETER 0]
+[TARGET 3]
+Click next to '[ARGNAME]' to provide
+a text displayed before the variable content.
+[E]
+Example: "Your input was: "
+
+[PARAMETER 1]
+[TARGET 3]
+Click next to '[ARGNAME]' to provide the
+name of the source-variable to display.
+Type exactly the same as before: "[#]input".
+[E]
+Variables are accessible this way
+everywhere in your program.
+
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+
+Focus on the "Console" window and press
+the chosen letter (like 'A').
+[E]
+You will be asked for input and the afterwards.
+Focus on the "Program Output" - window and
+see what happens when you press your given key.
+
+Press the "STOP" button to continue the tutorial
+after execution has worked successfully at least once!
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Data can be saved in a "variable"
+- A variable is created by a name starting with '[#]'
+- The data is accessible from any event
+- If you use input events, the program will run until you stop
+[E]
+
+Variables are a key structure of practically any programming.
+They can store text, numbers and also references to special
+objects you will meet in later tutorials.
+
+Note that you have the "Variables/Info" which allows you to see
+variables and also change them at runtime for testing purposes.
+Try it out in an exercise.
+
+
+[EXERCISE Print Number]
+GOAL:
+Print a number instead of a text
+and change the number in the
+"Variables/Info" window.
+[E]
+HINTS:
+You only have to replace the action
+in the initialization event.
+
+[ENDTUT]
+
+
+
+
+
+
+
+[TUT Count Keypress] 1
+[KNOW]
+- Use simple variable
+
+[GOAL]
+Count how many times a key has been pressed.
+
+[LEARN]
+- Keyboard event
+- Changing a variable
+- The 'variables window'
+
+
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME] events.
+
+[ELEMENT EvInit]
+[TARGET 0]
+Add an [ELNAME] event.
+[E]
+Again this is where we
+initialize a variable.
+
+[ELEMENT StruVariableNode]
+Open the structure type '[ELNAME]'.
+[E]
+It contains elements to initialize variables.
+
+[ELEMENT StSetNumVar]
+[TARGET 1]
+[PARENTTARGET 0]
+Use [ELNAME] because we want
+to count something.
+
+[PARAMETER 0]
+[TARGET 1]
+The [ARGNAME] needs a name.
+For example: #counter
+
+[PARAMETER 1]
+[TARGET 1]
+Provide the start-value for this variable.
+For example: 0
+[E]
+If the variable already exists
+you can apply basic operations to it
+but you will see this later in this tutorial.
+
+[ELEMENT EvenInputNode]
+Open [ELNAME].
+
+[ELEMENT EvKeyPressed]
+[TARGET 2]
+Again we need the [ELNAME] event.
+
+[PARAMETER 0]
+[TARGET 2]
+Provide any key you want.
+
+[ELEMENT StSetNumVar]
+[TARGET 3]
+[PARENTTARGET 2]
+Add a [ELNAME] element again.
+[E]
+This time it will be used differently though.
+
+[PARAMETER 0]
+[TARGET 3]
+Use the same variable as before.
+
+[PARAMETER 1]
+[TARGET 3]
+To set the new value based on the
+existing one, you have to set a
+'relative value'. Type the following: +=1
+[E]
+This mechanism supports all 4 basic operators.
+Instead of a number, you can also use other variables.
+Examples: /=2 , -=#myvar , *=5
+
+[ELEMENT ElWriteVariable]
+[TARGET 4]
+[PARENTTARGET 2]
+Visualize the value with '[ELNAME]'.
+
+[PARAMETER 0]
+[TARGET 4]
+Type any text. For example "Pressed: ".
+
+[PARAMETER 1]
+[TARGET 4]
+Type the same variable (#counter).
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+
+Focus on the "Console" window and press
+the chosen letter.
+[E]
+Press the "STOP" button to continue the tutorial
+after execution has worked successfully at least once!
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Variables can be changed relative to their current value.
+- Method: OPERATOR=VALUE
+- Example: += 1 , -=#myVar , *=10, /=4
+
+
+
+
+[EXERCISE Double the Value]
+GOAL:
+Double the value when you press
+a certain different key.
+[E]
+HINT:
+There are two equivalent methods.
+
+[ENDTUT]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TUT Labeled Events] 1
+[KNOW]
+- Event + Action concept
+- Use simple variable
+
+[LEARN]
+- Create and 'call' a 'Labeled Event'
+
+[GOAL]
+Call the execution of a set of elements.
+
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME] events.
+
+[ELEMENT EvLabeled]
+[TARGET 0]
+Drag a [ELNAME] into the program.
+[E]
+This event can be executed on
+command by a certain element.
+
+
+[PARAMETER 0]
+[TARGET 0]
+Give this event a label (name).
+For example: Do Later
+[E]
+The event can be accessed
+by its [ARGNAME] later.
+
+[PARAMETER 1]
+[TARGET 0]
+Press onto the '+' symbol
+to add an [ARGNAME] optional argument.
+Then type a variable which will
+hold data passed to the event.
+For example: #data
+[E]
+The value which will be accessible
+through this variable can
+be set when the event is 'called'.
+
+[ELEMENT ActBasicNode]
+Open [ELNAME] actions.
+
+[ELEMENT ElDelay]
+[TARGET 1]
+[PARENTTARGET 0]
+Add a [ELNAME] into the event. 
+
+[PARAMETER 0]
+[TARGET 1]
+Use a period of 2000-3000 milliseconds.
+
+[ELEMENT ActInputOutput]
+Open [ELNAME].
+
+[ELEMENT ElWriteVariable]
+[TARGET 2]
+[PARENTTARGET 0]
+To demonstrate the argument
+passed to the event, add '[ELNAME]'.
+[E]
+This will demonstrate how the
+argument data has been passed.
+
+[PARAMETER 0]
+[TARGET 2]
+Just type "Argument: ".
+
+[PARAMETER 1]
+[TARGET 2]
+Type the same variable as before (#data).
+
+[ELEMENT EvenInputNode]
+Open [ELNAME].
+
+[ELEMENT EvKeyPressed]
+[TARGET 3]
+To demonstrate the 'Labeled Event',
+add a [ELNAME] event.
+
+[PARAMETER 0]
+[TARGET 3]
+Type any [ARGNAME].
+For example 'A'.
+
+[ELEMENT StruLabelNode]
+Open [ELNAME].
+[E]
+Here you find various elements
+related to 'Labels'.
+In general, 'Labels' are elements
+where execution can start.
+
+[ELEMENT StLabelExecute]
+[TARGET 4]
+[PARENTTARGET 3]
+Add [ELNAME].
+This will 'call' the Labeled Event.
+
+[PARAMETER 0]
+[TARGET 4]
+The [ARGNAME] has to be the same
+text you typed earlier. For example: Do Later
+
+[PARAMETER 1]
+[TARGET 4]
+Do not [ARGNAME].
+Therefore type 'False' or '0'.
+[E]
+You will see the effect of this
+parameter later in an exercise.
+
+[PARAMETER 2]
+[TARGET 4]
+Press onto the '+' symbol
+and provide the value you want to pass
+to the event. For example the number '42'.
+
+[ELEMENT ElWriteMessage]
+[TARGET 5]
+[PARENTTARGET 3]
+To visualize that the event has
+executed, add '[ELNAME]'.
+
+[PARAMETER 0]
+[TARGET 5]
+Type anything.
+For example 'Pressed key.
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+
+Focus on the "Console" window and press
+the chosen letter (like 'A').
+[E]
+Try to press the letter multiple
+times and see what happens.
+
+Press the "STOP" button to continue the tutorial
+after execution has worked successfully at least once!
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- 'Labeled Events' can be called with the 'Execute Label' event.
+- The call can be asynchronous and run in parallel.
+- In that case, the calling event continues execution.
+- When calling 'Labeled Events' youc an pass values as arguments.
+[E]
+Using 'Labeled Events' you can avoid repeating the same elements
+when you want to perform the same in various places.
+By passing 'Arguments' you can influence the behavior of every call.
+
+This mechanism is often called "functions"
+in other programming languages.
+
+
+
+[EXERCISE Wait To Finish]
+GOAL:
+Enforce that the calling event waits
+for the 'Labeled Event' to finish.
+[E]
+HINT:
+Switch the corresponding parameter
+of the 'Execute Label' element to true.
+
+
+[EXERCISE Jump to Label]
+GOAL:
+Directly jump into the 'Labeled Event'
+and quit the calling event.
+Try using a delayed alarm.
+[E]
+HINTS:
+Replace the 'Execute label' element
+with 'Jump to Label' or 'Alarm Label'.
+
+[ENDTUT]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[TUT List Files] 0
+[KNOW]
+- Use simple variable
+
+[GOAL]
+List the contents of a directory
+
+[LEARN]
+- Variable as an identifier
+- Loop through a List
+
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME] events.
+
+[ELEMENT EvInit]
+[TARGET 0]
+Add an [ELNAME] event.
+
+[ELEMENT ActFilesNode]
+Open the action category '[ELNAME]'.
+[E]
+Here you find a couple of actions
+related to find, read and write files.
+
+[ELEMENT ElFileLoadDirContents]
+[TARGET 1]
+[PARENTTARGET 0]
+We want to [ELNAME].
+[E]
+The action will search for all files
+inside a directory and add every file-path
+to a so called 'List'.
+
+[PARAMETER 0]
+[TARGET 1]
+The new created list will be stored 
+in a variable. type: #filesList
+[E]
+Using this 'identifier' you can access
+the list from any other program element.
+
+[PARAMETER 1]
+[TARGET 1]
+Provide the path where to look for the directory.
+To test, just type: external
+[E]
+'external' is a directory created by the
+application to store some accessible files.
+Note that paths are usually relative
+to the Drasp-Application file!
+
+However you can also provide absolute paths
+like "C:\Windows" or "/var/log" in linux.
+
+[PARAMETER 2]
+[TARGET 1]
+Type 'False' to avoid including sub-directories.
+
+[ELEMENT StruLoopNode]
+We want to display all found file-paths.
+Therefore '[ELNAME]' is needed.
+[E]
+[ELNAME] are helpful to repeat certain elements
+either a predefined number of times
+or until/while a condition is met.
+
+[ELEMENT StListLoop]
+[TARGET 2]
+[PARENTTARGET 0]
+[ELNAME] will convenient loop through an entire given list.
+[E]
+Notice how the bottom line of this block is dotted!
+This visualize that it can hold nested child-elements just like events.
+
+[PARAMETER 0]
+[TARGET 2]
+Use the same [ARGNAME] variable as before.
+
+[PARAMETER 1]
+[TARGET 2]
+[ARGNAME] requires another variable.
+In each iteration of the loop, this variable will carry the value of one element in the list.
+So in this case it will hold the path of the file.
+
+[ELEMENT ActInputOutput]
+Open [ELNAME].
+
+[ELEMENT ElWriteVariable]
+[TARGET 3]
+[PARENTTARGET 2]
+Use [ELNAME] to show the variables content.
+
+[PARAMETER 0]
+[TARGET 3]
+Type something like "File Path: ".
+
+[PARAMETER 1]
+[TARGET 3]
+Use the output-variable from before.
+
+[ELEMENT ActBasicNode]
+Open [ELNAME] actions.
+
+[ELEMENT ElDelay]
+[TARGET 4]
+[PARENTTARGET 2]
+Add a short [ELNAME] so it is
+visible how the loop progresses.
+[E]
+Of course this wouldn't be needed
+in a purposeful program.
+
+[PARAMETER 0]
+[TARGET 4]
+1000 milliseconds suffice.
+
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+[E]
+See what happens in the "Console" window.
+Try to press the letter multiple
+times and see what happens.
+
+Press the "STOP" button to continue the tutorial
+after execution has worked successfully at least once!
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- 'Lists' store several chunks of data.
+- They can be accessed by an "Identifier".
+- Loops iterate through a list for example, performing elements.
+[E]
+The concept of identifiers is used by many elements in Drasp.
+In some programming languages they are called "Objects".
+
+
+[EXERCISE Include Sub-Directories]
+GOAL:
+Include all files from nested
+directories inside the target
+and output the file index too.
+[E]
+HINTS:
+Adjust the corresponding parameter.
+Regarding the index in the list,
+look at optional arguments.
+
+[ENDTUT]
+
+
+
+
+
+
+
+
+
+[TUT Are You Lucky?] 0
+[KNOW]
+- Event + Action concept
+
+[GOAL]
+Show different messages by coincidence.
+
+[LEARN]
+- If-Else concept
+
+
+[ELEMENT EvenInputNode]
+Open [ELNAME].
+
+[ELEMENT EvKeyPressed]
+[TARGET 0]
+Add a [ELNAME] - event.
+
+[PARAMETER 0]
+[TARGET 0]
+Chose any key you want.
+For example: Control
+
+[ELEMENT CondMiscNode]
+Open the [ELNAME]-section of conditions.
+[E]
+Conditions are elements which are evaluated
+to result as true or false,
+similarly to events.
+If 'true', the direct sub elements will execute.
+Otherwise it skips to an 'else' structure element.
+
+[ELEMENT ConIfLucky]
+[TARGET 1]
+[PARENTTARGET 0]
+Add the element '[ELNAME]'.
+[E]
+The evaluation of this block is random
+based on a given probability.
+
+[PARAMETER 0]
+[TARGET 1]
+Type any number between 0 and 100.
+For example: 50
+
+[ELEMENT ActInputOutput]
+Open the [ELNAME] section.
+
+[ELEMENT ElWriteMessage]
+[TARGET 2]
+[PARENTTARGET 1]
+Add '[ELNAME]' as a child element of 'Lucky'.
+[E]
+Again just like for events, the dotted
+bottom-line of the condition indicates
+that it can have children elements.
+
+[PARAMETER 0]
+[TARGET 2]
+Type something like: You won! :)
+
+[ELEMENT StruProgNode]
+Open the structures-section '[ELNAME]'.
+[E]
+Here you find a few often used structures.
+
+[ELEMENT StElse]
+[TARGET 3]
+[PARENTTARGET 0]
+Place and '[ELNAME]' block to the
+bottom with 'Initialization' becoming
+the parent so it is on the same level
+as the condition 'Lucky'.
+[E]
+To achieve this, you should hide the children
+of 'Lucky' by clicking onto the parent element.
+
+[ELEMENT ElWriteMessage]
+[TARGET 4]
+[PARENTTARGET 3]
+Add '[ELNAME]' as a child of 'Else'.
+[E]
+This is what will be executed if you are not 'lucky' and the condition
+has been evaluated with 'false'.
+
+[PARAMETER 0]
+[TARGET 4]
+Type something like: You lost :(
+
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+[E]
+See what happens when you press
+the chosen button.
+
+Press the "STOP" button to continue the tutorial
+after execution has worked successfully at least once!
+
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- "Conditions" could be described as "IF" clauses.
+- Their child-elements are only executed if evaluated true.
+- You can add an "Else" block below to execute otherwise.
+[E]
+This If-Else concept is another crucial part of programming.
+However due to DRASPs event-based system, you need If-clauses
+much less often.
+
+[EXERCISE Multi-Key Event]
+GOAL:
+Show a message if two keys are
+held down simultaneously.
+[E]
+HINT:
+Use a normal key event and an input "Condition"!
+
+[EXERCISE Random With Value]
+GOAL:
+Achieve the effect from this tutorial
+by using the "Set Random" structure.
+[E]
+HINT:
+You will need a comparing condition.
+
+
+[ENDTUT]
+
+
+
+
+
+[TUT Show Window] 1
+[KNOW]
+- Variable as an identifier
+
+[GOAL]
+Show a window with an image
+
+[LEARN]
+- Display a 'Window'
+- Show a background
+
+[UNAVAILABLE]
+
+[TTT]
+
+[EXERCISE Fullscreen Window with Pattern]
+GOAL:
+Create a window in fullscreen mode
+with the background repeating.
+[E]
+HINT:
+See the tooltips of 'Open Window'
+and "New Background" for the features.
+
+[ENDTUT]
+
+
+
+
+
+[TUT Interactive Image] 1
+[KNOW]
+- Display a 'Window'
+- Keyboard event
+
+[LEARN]
+- Display a 'Sprite'
+
+[GOAL]
+Move an image using the keyboard
+
+[UNAVAILABLE]
+
+[TTT]
+
+[EXERCISE Fly]
+GOAL:
+Move the sprite 100 pixels higher
+while <Space> is down.
+[E]
+HINT:
+You will need a "Key Pressed"
+and a "Key Released" event.
+
+[ENDTUT]
+
+
+
+
+[TUT Moving Image] 1
+[KNOW]
+- Display a 'Sprite'
+
+[LEARN]
+- Defined Loops
+
+[GOAL]
+Have an image move randomly.
+
+[UNAVAILABLE]
+
+
+[EXERCISE Catch the Image]
+GOAL:
+Cause the sprite to jump sooner
+every time it's clicked with mouse.
+[E]
+HINTS:
+There is an event for mouse click
+on a sprite.
+
+You will need to use a variable
+for delay length.
+
+[ENDTUT]
+
+
+%Alternative goal: Catch the image-game (by using a sprite-click event)
+
+
+
+
+
+
+
+[TUT Stacked Events] 2
+[KNOW]
+- Event + Action concept
+
+[LEARN]
+- Stacking events
+
+[GOAL]
+Execute same elements with multiple events.
+
+
+[ELEMENT EvenInputNode]
+We will only need [ELNAME] events this time.
+
+[ELEMENT EvKeyPressed]
+[TARGET 0]
+Add a [ELNAME] as the root of the program.
+
+[PARAMETER 0]
+[TARGET 0]
+Just a [ARGNAME]. For example: A
+
+[ELEMENT ActInputOutput]
+Open [ELNAME].
+
+[ELEMENT ElWriteMessage]
+[TARGET 1]
+[PARENTTARGET 0]
+Add [ELNAME].
+
+[PARAMETER 0]
+[TARGET 1]
+Use a text which you can recognize later.
+For example: Event A
+
+[ELEMENT EvKeyPressed]
+[TARGET 2]
+[PARENTTARGET 0]
+Add another [ELNAME] - event,
+but NOT as a root but as a child element
+of the first event!
+[E]
+When you simulate the program later
+you will see the idea behind this.
+
+[PARAMETER 0]
+[TARGET 2]
+Use a different key from before!
+For example: B
+
+[ELEMENT ElWriteMessage]
+[TARGET 3]
+[PARENTTARGET 2]
+Add another "[ELNAME]" element.
+
+[PARAMETER 0]
+[TARGET 3]
+Add something like: Event B
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+[E]
+Now see the difference between pressing
+the two keys you have chosen.
+
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Events can be placed inside other events.
+- Nested elements are executed ignoring the nested events.
+[E]
+This concept realizes the principle of "OR" for events.
+That means elements are executed when either
+of the events have been evaluated to be true.
+Note that nested events are executed based on
+their evaluation, no matter where they are placed. 
+
+
+[ENDTUT]
+
+
+
+
+
+
+
+
+
+/%
+
+[TUT Synchronize Events] 2
+[KNOW]
+- Create and 'call' a 'Labeled Event'
+
+[LEARN]
+- Synchronize events using a 'Latch'
+
+[GOAL]
+Coordinate the execution in multiple events.
+
+
+[UNAVAILABLE]
+
+% See Synchronization.dra
+
+
+[ENDTUT]
+
+\%
+
+
+
+
+
+
+
+
+[TUT Persisting Data] 2
+[KNOW]
+- Changing a variable
+
+[GOAL]
+Maintain data between program starts.
+
+[LEARN]
+- Persisting a variable on system
+
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME].
+
+[ELEMENT EvInit]
+[TARGET 0]
+Add an [ELNAME] event.
+
+[ELEMENT ActFilesNode]
+Open the Files section.
+[E]
+To persist any form of data - that means
+to maintain it between two launches of
+the program - files are needed.
+Everything else is discarded when the program ends.
+
+[ELEMENT ElReadVar]
+[TARGET 1]
+[PARENTTARGET 0]
+Add a [ELNAME] element.
+[E]
+We assume that the file which
+will be accessed by this element
+already exists (since it will exist later 
+when we start the program a second time).
+
+[PARAMETER 0]
+[TARGET 1]
+You can keep the default [ARGNAME]
+or name your own.
+[E]
+You can chose your own file-termination.
+
+[PARAMETER 1]
+[TARGET 1]
+A target for the loaded data is needed.
+Therefore press onto '+' and write a variable name.
+For example: #varA
+[E]
+With this method you can load many variables at once.
+
+[ELEMENT ActInputOutput]
+Open [ELNAME].
+
+[ELEMENT ElGetInputNum]
+[TARGET 2]
+[PARENTTARGET 1]
+You might have noticed that "Read Variables"
+has a dotted bottom line.
+That indicates that it can hold children elements.
+Add 'Input Number' as a child element.
+[E]
+Those children elements will be executed
+if reading of at least one variable FAILED!
+Therefore we should initialize our variable
+to a default or user-given value.
+
+[PARAMETER 0]
+[TARGET 2]
+Type something like "Any number: "
+
+[PARAMETER 1]
+[TARGET 2]
+To have this element mimic what
+its parent-element ("Read Variables") would have done,
+name the output variable the same. For example: #varA
+[E]
+After those two blocks,
+the variable either has a loaded
+value from the file,
+or new value you typed.
+
+[ELEMENT ElWriteVariable]
+[TARGET 3]
+[PARENTTARGET 0]
+Add "[ELNAME]" below but on the same level
+as "Read variables" so 'Initialization' becomes its parent!
+[E]
+To achieve this, you have to hide the children
+of that element. Just click onto "Read Variables"
+and the child will disappear until you click again.
+
+
+[PARAMETER 0]
+[TARGET 3]
+Type something like "The value is: ".
+
+[PARAMETER 1]
+[TARGET 3]
+Again the same variable (#varA).
+
+[ELEMENT ElWriteVar]
+[TARGET 4]
+[PARENTTARGET 0]
+Last we want to "[ELNAME]"
+to actually "persist" our data.
+
+[PARAMETER 0]
+[TARGET 4]
+Use the same file as before.
+
+[PARAMETER 1]
+[TARGET 4]
+Again press onto "+" and type the variable (#varA).
+
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+[E]
+If it runs as supposed, you will just be asked
+for a number.
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+a SECOND time on the local machine.
+[E]
+This time you should just see the number from
+before in the console.
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Variables and their data can be saved to files.
+- Child elements of "Read Variables" are executed when failed.
+[E]
+Using this system you can smoothly load, save and
+initialize variables.
+That can be used to maintain data between multiple
+starts to the program. Including when the system
+has rebooted in the meantime.
+
+Note that the variable name when loaded has to be
+identical to when it has been saved.
+However the saving-order does not matter
+and you may re-write the same variable multiple times.
+
+
+[ENDTUT]
+
+
+
+
+
+
+
+
+%/// RASPBERRY
+
+
+[TUT X Deploy Externally] 0
+[KNOW]
+- Use simple variable
+
+[HARD]
+- Optionally: A Raspberry PI
+
+[LEARN]
+- Deploy on a machine
+
+[GOAL]
+Launch a program remotely on a Raspberry Pi.
+
+
+[BUTTON OPTIONS]
+Open the Options menu.
+
+[BUTTON TEST AND SAVE]
+To prepare deploying on a remote target like
+a Raspberry Pi, perform the following steps:
+
+1. Activate 'Network target'
+2. Fill out the SSH-data
+(use the tooltips for info).
+3. Provide a Target Path
+4. Click onto 'Test and Save'
+[E]
+If it fails, you can retry.
+
+If you want to deploy on a local machine,
+only provide the "Target Path"
+and click onto 'Test and Save'.
+
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME].
+
+[ELEMENT EvInit]
+[TARGET 0]
+Add an [ELNAME] - event.
+
+[ELEMENT ActInputOutput]
+Open '[ELNAME]'.
+
+[ELEMENT ElWriteMessage]
+[TARGET 1]
+[PARENTTARGET 0]
+Add an '[ELNAME]' element.
+
+[PARAMETER 0]
+[TARGET 1]
+Type something like:
+Hello from Raspberry!
+
+[BUTTON DEPLOY]
+Click onto [BTNAME] and watch the
+'Deployed Program Output (Console)'.
+[E]
+You should find your text there.
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- DRASP can connect to a Raspberry Pi or any SSH-enabled system.
+- Only the host-ip address and the login-data are needed.
+- The options-menu automatically verifies the connection.
+[E]
+DRASP makes it easy to deploy software onto the raspberry.
+If you know the IP address in the network, you will never
+need to attach a screen to it anymore.
+Using this tutorial and finding the address through your
+router, you can also work completely without a screen:
+https://howchoo.com/g/ndy1zte2yjn/how-to-set-up-wifi-on-your-raspberry-pi-without-ethernet
+
+[ENDTUT]
+
+
+
+
+[TUT X Blinking LED (via GPIO)] 0
+[KNOW]
+- Deploy on a machine
+
+[HARD]
+- A Raspberry PI
+- An LED and resistor
+- Jumper-Wires
+
+[LEARN]
+- Wire an LED to a Raspberry GPIO
+- Turn an GPIO on and off
+
+[GOAL]
+Blink an LED attached to a GPIO pin of the Raspberry Pi.
+
+
+[ELEMENT EvenBaseNode]
+Open [ELNAME].
+
+[ELEMENT EvInit]
+[TARGET 0]
+Add an [ELNAME] - event.
+
+
+[ELEMENT ActBasicNode]
+Open [ELNAME] actions.
+
+[ELEMENT ElDelay]
+[TARGET 1]
+[PARENTTARGET 0]
+Add a [ELNAME] element.
+
+[PARAMETER 0]
+[TARGET 1]
+This is the blinking speed.
+Use something like 500ms.
+
+[ELEMENT ElToggleIO]
+[TARGET 2]
+[PARENTTARGET 0]
+Add a '[ELNAME]' element.
+[E]
+"GPIOs" are the pins of the raspberry.
+They can be used directly as outputs to drive
+small loads like LEDs.
+The Toggle element will turn an output on,
+if it's off and vica versa.
+
+[PARAMETER 0]
+[TARGET 2]
+Type the desired pin.
+
+[ELEMENT StruLoopNode]
+Open the [ELNAME] - section.
+
+[ELEMENT StRepEv]
+[TARGET 3]
+[PARENTTARGET 0]
+Add '[ELNAME]'.
+
+[BUTTON SIMULATE]
+Press onto 'Simulate' to test.
+Press 'STOP' to continue the tutorial.
+[E]
+In the Variables/Info window you should
+see the changing output pin.
+
+[BUTTON DEPLOY]
+Now Deploy!
+If everything went right,
+you should see the LED blink.
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- With the GPIOs you can power external components.
+- They work like binary switches.
+- The positions (states) are 'ON' (High) and and 'Off' (Low).
+- Using the TOGGLE element you can alternate between those.
+[E]
+GPIOs (General Purpose Input Output) are the
+main method a Raspberry Pi can work with simple
+external circuits and hardware.
+
+Using them as outputs, you can directly drive small loads
+like LEDs with them.
+If you want to drive higher loads like motors,
+many LEDs or even 220V/110V apparatures,
+you have to use transistors/mosFETs or relais.
+
+Look into the Info window for further explanation.
+
+
+[EXERCISE Fast Blinking]
+GOAL:
+The LED shall blink faster
+too loot out the limits.
+Use the Set GPIO element
+Instead of Toggle.
+[E]
+HINT:
+You can disable debug-mode
+for deployment ( press on '!')
+to maximize speed.
+
+[ENDTUT]
+
+
+
+
+[TUT X Switch an LED by Button] 0
+[KNOW]
+- Wire an LED to a Raspberry GPIO
+
+[HARD]
+- A Raspberry PI
+- A Button and Resistor
+- An LED and resistor
+- Jumper-Wires
+
+[LEARN]
+- Button press event via GPIO
+
+[GOAL]
+Switch an LED on and off by a button.
+
+
+[ELEMENT EvenInputNode]
+Open the '[ELNAME]' - section.
+
+[ELEMENT EvGPIOchanged]
+[TARGET 0]
+Add a '[ELNAME] Changed' event.
+[E]
+This event uses a GPIO pin as an
+input and will execute when its state changes.
+
+[PARAMETER 0]
+[TARGET 0]
+Use the pin with the button.
+
+[ELEMENT ActBasicNode]
+Open [ELNAME] actions.
+
+[ELEMENT ElToggleIO]
+[TARGET 1]
+[PARENTTARGET 0]
+Add [ELNAME].
+
+[PARAMETER 0]
+[TARGET 1]
+Chose the desired LED pin.
+
+[BUTTON DEPLOY]
+Click onto [BTNAME] and try the button.
+[E]
+The LED should turn on or off.
+
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- GPIOs can also work as inputs.
+- In that case the GPIO events react on state-changes.
+[E]
+Just like when using GPIOs as outputs, they can also
+have a 'High' and a 'Low' state when used as inputs.
+'High' or 'Low' is determined by whether the pin is
+connected to a ground Pin, or to a VCC (3.3V) pin.
+
+Using this system, the Raspberry can retrieve binary
+information from human-controled buttons, but also
+electronics.
+Note however that the voltage of connected electronics
+may not exceed 3.3V!
+
+Look into the Info Window for more information.
+
+
+/%
+
+[EXERCISE Change Blinking Speed]
+GOAL:
+TODO: Chose a different tutorial becaus ethis requires loops outside the initialization event!
+Have the LED blink with a higher
+frequency when pressing the button.
+HINT:
+- You need to redo the use a variable for that
+
+[EXERCISE Control Blinking Speed]
+GOAL:
+Have the LED blink and increase speed
+when pressing one button, decrease
+with another button.
+
+\%
+
+[ENDTUT]
+
+
+
+
+
+[TUT Dimming an LED] 1
+[KNOW]
+- Deploy on a machine
+- Defined Loops
+
+[HARD]
+- A Raspberry PI
+- Adafruit(TM) I2C-controlled PWM Board
+- An LED and resistor
+- Jumper-Wires
+
+[LEARN]
+- Use the I2C controlled PWM board
+- Dim LED
+
+[GOAL]
+Dim an LED via an external PWM board.
+
+
+
+[UNAVAILABLE]
+
+
+[EXERCISE Control a Servo Motor]
+GOAL:
+Set the position of a Servo Motor.
+HINT:
+A PWM-frequency of 50 is often
+recommended for servos.
+
+
+[EXERCISE Smoothly Change Intensity]
+GOAL:
+The brightness of the LED
+should change gradually.
+HINT:
+"Ramp PWM Value AB" is useful.
+
+
+[ENDTUT]
+
+
+
+[TUT Deploy as Auto-Start] 1
+[KNOW]
+- Wire an LED to a Raspberry GPIO
+- Defined Loops
+
+[HARD]
+- A Raspberry PI
+
+[LEARN]
+- Deploy a Program auto-starting with the Raspberry
+
+[GOAL]
+Automatically launch a program when booting the Raspberry Pi.
+
+
+[UNAVAILABLE]
+
+
+[ENDTUT]
+% Alternative goal: Run the program every few minutes
+
+
+
+
+
+
+
+
+
+[TUT Telegram Bot] 2
+[KNOW]
+- Variable as an identifier
+
+[HARD]
+- Any smartphone with the Telegram APP
+
+[LEARN]
+- Set up a responding Telegram Bot
+
+[GOAL]
+Create a Telegram Bot responding to the user.
+
+
+[ELEMENT EvenBaseNode]
+Prepare a telegram bot using the "BotFather"!
+You will need the "name" and "token".
+When ready, open [ELNAME].
+[E]
+You can find official instructions here:
+https://core.telegram.org/bots#6-botfather
+
+[ELEMENT EvInit]
+[TARGET 0]
+Add an [ELNAME]-event.
+
+[ELEMENT ActTeleNode]
+Open the '[ELNAME]' - action category.
+[E]
+here you find actions to start up and
+handle input of a bot.
+
+[ELEMENT ElTeleBot]
+[TARGET 1]
+[PARENTTARGET 0]
+We want to connect a bot first.
+Therefore add '[ELNAME]'.
+
+[PARAMETER 0]
+[TARGET 1]
+The bot requires an identifier variable
+inside your program.
+For example use: #theBot
+
+[PARAMETER 1]
+[TARGET 1]
+Type the '[ARGNAME]' which you have
+chosen when registering.
+[E]
+Note that it's not the display name of the bot
+but the address you usually access with @____Bot.
+The leading '@' is not required.
+
+[PARAMETER 2]
+[TARGET 1]
+Now copy/type the [ARGNAME]
+you have been given by the 'BotFather'.
+[E]
+This token is precious and works like a password.
+Do not publish it. The BotFather can give
+you a new one however.
+
+[ELEMENT EvenTeleNode]
+To have anything happen with a bot,
+we require an event.[ELNAME]
+
+[ELEMENT EvTeleCommand]
+[TARGET 2]
+Add a '[ELNAME]' - event.
+[E]
+This event will execute when any user
+has sent a matching command to your bot.
+
+[PARAMETER 0]
+[TARGET 2]
+Provide the identifier variable.
+For example: #theBot
+
+[PARAMETER 1]
+[TARGET 2]
+Whenever the user sends something,
+a 'message object' is generated.
+To store it, use something like: #msg
+
+[PARAMETER 2]
+[TARGET 2]
+[ARGNAME] is the text which this event will react to.
+Use something like: Hello
+[E]
+You can use many commands in one event.
+Look into the tooltip for the two methods.
+
+[ELEMENT ElTeleSend]
+[TARGET 3]
+[PARENTTARGET 2]
+Add a '[ELNAME]' - action.
+
+[PARAMETER 0]
+[TARGET 3]
+Type the identifier again.
+
+[PARAMETER 1]
+[TARGET 3]
+Type the Message-Indentifier.
+For example: #msg
+
+[PARAMETER 2]
+[TARGET 3]
+Type something like: Welcome!
+[E]
+The [ARGNAME] can be any kind of text.
+
+
+[BUTTON SIMULATE]
+Click onto '[BTNAME]' to launch the program
+on the local machine.
+[E]
+If initialization of the bot has been
+successful, try it with your smartphone.
+
+
+[CONCLUSION]
+Knowledge from this tutorial:
+- Telegram Bots are a method of communicating with a smartphone.
+- The Corresponding events react to matching commands.
+- The bot can also respond.
+[E]
+Note that the bot naturally only works
+while your program is running.
+
+
+
+[EXERCISE Respond Username]
+GOAL:
+The bot should respond with
+"Hello" and the user's name.
+
+HINTS:
+See the message-related actions.
+You might need to 'Set/Concat Text'.
+
+
+[EXERCISE Remote Control GPIO]
+GOAL:
+The bot should switch GPIOs
+by a user command: Toggle GPIO #
+where # can be any number.
+
+HINTS:
+Use the "Argumented Message" event.
+With a pattern like: Toggle GPIO [N0]
+
+
+[ENDTUT]
+
+
+
+
+[TUT Spline and Graph] 2
+[KNOW]
+- Display a 'Window'
+
+[LEARN]
+- Use a 'Spline'
+- Display a 'Spline' as a graph
+
+[GOAL]
+Create a 'Spline' based on fixed points.
+
+
+[UNAVAILABLE]
+
+
+[EXERCISE Control PWM by Graph]
+GOAL:
+Control the intensity of an LED
+or position of a servo motor
+with a graph through PWM.
+HINT:
+Note to use the right maximum
+and minimum values!
+
+[EXERCISE Mouse Modifiable Graph]
+GOAL:
+Create a graph which can be
+altered by mouse whilst running.
+HINT:
+You find the option as an
+optional parameter for "New Graph"
+
+[ENDTUT]
+% Optional: Create dynamic spline
+
+
+
+
+
+[TUT One-Wire Sensor] 2
+[KNOW]
+- Deploy on a machine
+- Use a 'Spline'
+
+[HARD]
+- A Raspberry PI
+- 1-Wire sensor (ex. DS18B20)
+- A Resistor
+- Jumper-Wires
+
+[LEARN]
+- Use an One-Wire based sensor
+- Display values in a graph
+
+[GOAL]
+Retrieve and display the data from an external 1-Wire - based sensor.
+
+
+[UNAVAILABLE]
+
+
+[ENDTUT]
+
+
+
+
+[TUT Analog Input] 2
+[KNOW]
+- Variable as an identifier
+
+[HARD]
+- A Raspberry PI
+- A MCP3008
+- Potentiometer or joystick
+- Jumper-Wires
+
+[LEARN]
+- Use an ADC
+- Handle analog input
+
+[GOAL]
+Read an analog value.
+
+
+[UNAVAILABLE]
+
+
+[EXERCISE Joystick]
+GOAL:
+Use the input from an
+analog joystick.
+HINT:
+You can interpret the value
+correctly with "Joystick Value". 
+
+[ENDTUT]
+
+
+
+[TUT Compute Prime Numbers] 2
+[KNOW]
+- Variable as an identifier
+
+[LEARN]
+- Use mathematical actions
+
+[GOAL]
+Compute Prime Numbers.
+
+
+[UNAVAILABLE]
+
+
+[ENDTUT]
+
+
+
+
+[C]SHORTCUTS
+The following shortcuts are available:
+
+Left-Click on elements to hide sub-elements.
+Right-Click on elements to exempt them from being executed.
+
+Left-Click with <Shift> pressed down to view all arguments.
+Right-Click with <Shift> pressed down to mark a Break-Point.
+
+Keep <Shift> pressed down when dragging an element to copy it.
+
+
+/%
+
+[C]FUNCTIONALITY OVERVIEW
+
+[S]Currently available:
+- Output in text and popups
+- Compute values by using variables
+- Access GPIO pins (change state and detect state)
+- Access keyboard input
+- Control an Adafruit(TM) PWM Board (uses the I2C protocol)
+- Show window on the graphical output with images, backgrounds and text
+- Receive and send messages via Telegram(TM) by providing a "Bot"
+- Access sensors via the 1-Wire-Protocol
+- Stepper motor control
+- Rotary encoder input
+- Auto-Spline-Data
+- UART access
+- Using external programs
+
+
+[S]Coming soon:
+- Buttons in windows
+- Camera access (Including transmission via telegram)
+- Sockets/Network communication (perhaps MQTT protocol)
+- RFID/NFC reader
+
+
+
+\%
+
+[C]CONCEPTS
+[S]About "Event-based programming"
+Event-based programming means that everything that determines the behavior of the
+resulting program is inside or part of a so called 'Event'.
+Events are elements with a defined condition.
+
+Simple examples are the 'Initialization' event, which has a condition related to the program start,
+and the 'Keyboard Pressed' event which is associated with a given key on a keyboard.
+
+When the corresponding condition is met, further actions associated to this event are executed.
+Here in 'DRASP', associating elements to an event is performed by dragging them onto
+the event.
+Tip: A green, yellow or red rectangle will show you where the element will be inserted.
+
+
+HINT: Directly connect the raspbeery to your laptop Wi-Fi. If you have a wlan laptop with Windows 10,
+you can directly connect via Wi-Fi Direct.
+
+
+[C]THE IDE
+
+The main development window of the IDE consists of the following 6 sections:
+
+- MAIN MENU:
+Location: The top of the window
+
+It provides a row of buttons to handle the currently opened program.
+
+[TODO: Add button descriptions]
+-
+-
+-
+
+
+[S]Program Frame
+Location: Center of the window
+
+This is the main 'Program' section which displays the current page of elements which form a tree-structure.
+Drag elements from the surrounding sections 'Actions', 'Events', 'Structures' and 'Conditions'
+to program the desired behavior.
+
+A program can consist of multiple pages. Add a new one with the drop-down menu next to "Main" at the top.
+
+Right click on a page to temporarily excempt it from executing."
+This concept also works with program elements inside the page.
+
+The button "Construction" will open the constructions view (note that currently constructions are not saved! TODO )
+
+
+[S]Events
+Location: Top right of the window
+
+'Events' are the foundation of every program
+and the only elements making sense to be placed directly into the frame as roots.
+'Actions', 'Conditions' and 'Structures' can be their nested children-elements forming a tree-structure
+which will be executed as soon as the internal condition of the event has been evaluated positively.
+
+Note that events run independently from each other (and can profit from multi-core hardware).
+Variables which are named pieces of data like a number or text for example, can be used
+to transmit data between events and influence each other. They are threadsafe.
+
+Most 'Events' have parameters (sometimes called arguments) which can be filled by values, texts or variables.
+
+
+[S]Actions:
+Location: Top left of the window
+
+'Actions' are the main program elements.
+Place them as children of 'Events' by draggining them inside
+and they will be executed, performing certain tasks.
+
+Most 'Actions' have parameters (sometimes called arguments)
+which can be filled by values, texts or variables.
+
+
+[S]Structures:
+Location: Bottom left of the window
+
+'Structures' are providing functionality which influences how the program is executed.
+Drag them into the program inside an event to use.
+Additionally, basic mechanisms to use variables and are found here
+just like the possibility to call specific, 'labeled events' on purpose.
+
+
+[S]Conditions:
+Location: Bottom right of the window
+
+'Conditions' are the 'if' statements from many other programming languages.
+Place them as children of 'Events' just like 'Actions' by dragging them inside
+and they will be evaluated when executed.
+
+Depending on their result, either their nested 'Actions' are executed next,
+or the ones inside an 'ELSE' statement below.
+
+Most 'Conditions' have parameters (sometimes called arguments) which can be filled by values, texts or variables.
+
+
+
+/%
+--
+--
+
+
+
+--------------
+
+
+
+
+
+
+
+
+
+
+[C]KNOWLEDGE STRUCTURE
+
+1. Event+Action concept
+Tutorials:
+	Hello World
+
+2. Numeric variables
+Tutorials:
+	Set and add (requires: "Event+Action concept")
+	Count keyboard button press (requires: "Event+Action concept")
+	
+3. Variables as Identifier
+Tutorials:
+	Create and fill list (requires: "Numeric variables")
+	Create list with files (requires: "Numeric variables")
+	
+4. Windows
+Tutorials:
+	Create a window with a background (requires: "Variables as Identifier")
+	Create a window showing images from a directory (requires: "Variables as Identifier" + "Lists")
+
+
+
+
+
+
+
+
+
+\%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
