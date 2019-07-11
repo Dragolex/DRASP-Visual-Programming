@@ -1,3 +1,7 @@
+** NOTE 11.07.2019: Support for the new Raspberry 4 is unknown yet. Will test and adapt as soon as I receive one (long delivery time) **
+
+
+
 # DRASP
 
 **DRASP is an event-based programming language and integrated development environment (IDE).**
